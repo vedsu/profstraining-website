@@ -74,46 +74,44 @@ useEffect(() => {
 
     speakers.map((item) => (
 
-      <div
-        className="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp"
-        key={item.id}
-      >
-        <div className="single_blog">
+<div
+  className="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp"
+  key={item.id}
+>
+  <Link
+    to={`/speaker-details/${item.id}`}
+    style={{
+      textDecoration: "none",
+      color: "inherit",
+      display: "block",
+      height: "100%",
+    }}
+  >
+    <div className="single_blog">
 
-          <Link to={`/speaker-details/${item.id}`}>
-            <img
-              src={item.photo}
-              className="img-fluid"
-              alt={item.name}
-             
-            />
-          </Link>
+      <img
+        src={item.photo}
+        className="img-fluid"
+        alt={item.name}
+      />
 
-          <div className="content_box text-center">
+      <div className="content_box text-center">
 
-            <h2>
-              <Link
-                to={`/speaker-details/${item.id}`}
-                style={{
-                  color: "#222",
-                  textDecoration: "none"
-                }}
-              >
-                {item.name}
-              </Link>
-            </h2>
+        <h2
+          style={{
+            color: "#222",
+          }}
+        >
+          {item.name}
+        </h2>
 
-            <Link
-              className="btn_one"
-              to={`/speaker-details/${item.id}`}
-            >
-              Read More <i className="ti-arrow-top-right"></i>
-            </Link>
+        <h6>{item.industry}</h6>
 
-          </div>
-
-        </div>
       </div>
+
+    </div>
+  </Link>
+</div>
 
     ))
 

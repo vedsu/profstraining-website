@@ -59,12 +59,12 @@ Version      : 1.0
 			itemsDesktop:[1000,1],
 			itemsDesktopSmall:[980,1],
 			itemsTablet:[768,1],
-			itemsMobile:[650,1],
+			itemsMobile:[767,1],
 			pagination:true,
 			navigation:true,
 			navigationText:["",""],
 			slideSpeed:1000,
-			autoPlay:false
+			autoPlay:true
 		});
 		/*END TESTIMONIAL JS*/	
 
@@ -72,7 +72,7 @@ Version      : 1.0
 		$("#testimonial-slider2").owlCarousel({
     items: 2,
     itemsDesktop: [1199, 2],
-    itemsDesktopSmall: [980, 2],
+    itemsDesktopSmall: [1024, 2],
     itemsTablet: [768, 2],
     itemsMobile: [650, 1],
 
@@ -80,7 +80,7 @@ Version      : 1.0
     navigation: true,
     navigationText: ["", ""],
     slideSpeed: 1000,
-    autoPlay: false
+    autoPlay: true
 });
 		/*END TESTIMONIAL JS*/	
 

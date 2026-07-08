@@ -85,6 +85,9 @@ function SpeakerDetailsPage() {
                   />
 
                   <h4>{speaker.name}</h4>
+				  <p>
+                    <strong>Industry:</strong> {speaker.industry}
+                  </p>
 
 					  {/*<p>
                     <strong>Industry:</strong> {speaker.industry}

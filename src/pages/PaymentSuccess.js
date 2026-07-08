@@ -16,6 +16,7 @@ useEffect(() => {
 
 const savePurchasedOrder = async () => {
 
+let requestJson = {};
 
 try {
 
@@ -30,6 +31,9 @@ try {
 
     const grandTotal =
         sessionStorage.getItem("grandTotal");
+		
+		const discount =
+    sessionStorage.getItem("discount") || "0";
 
     setDisplayOrderId(orderId);
     setDisplayAmount(grandTotal);
@@ -73,6 +77,11 @@ try {
         grandTotal || "0"
     );
 
+	formData.append(
+		"discount",
+		Number(discount).toFixed(2)
+	);
+
     formData.append(
         "invoice_number",
         "ORDER" + orderId
@@ -89,84 +98,82 @@ try {
         WEBSITE
     );
 
-    // Webinar Details
-    const firstItem = cart[0] || {};
 
-    formData.append(
-        "topic",
-        firstItem.title || ""
-    );
 
-    formData.append(
-        "webinardate",
-        firstItem.date || ""
-    );
+  // =========================
+// Build Multiple Webinar Array
+// =========================
 
-    const live =
-        cart.find(
-            item => item.optionName === "Live Session"
-        );
+const webinarMap = {};
 
-    const recording =
-        cart.find(
-            item => item.optionName === "Recording"
-        );
+cart.forEach((item) => {
 
-    const digital =
-        cart.find(
-            item => item.optionName === "Digital Download"
-        );
+    if (!webinarMap[item.webinarId]) {
 
-    const transcript =
-        cart.find(
-            item => item.optionName === "Transcript PDF"
-        );
+        webinarMap[item.webinarId] = {
 
-    formData.append(
-        "sessionLive",
-        live ? "true" : "false"
-    );
+            webinarId: item.webinarId,
+            topic: item.title,
+            webinardate: item.date,
+            speaker: item.speaker,
+            webinar_url: item.webinar_url,
 
-    formData.append(
-        "priceLive",
-        live ? String(live.price) : "0"
-    );
+            trainingOptions: []
 
-    formData.append(
-        "sessionRecording",
-        recording ? "true" : "false"
-    );
+        };
 
-    formData.append(
-        "priceRecording",
-        recording ? String(recording.price) : "0"
-    );
-
-    formData.append(
-        "sessionDigitalDownload",
-        digital ? "true" : "false"
-    );
-
-    formData.append(
-        "priceDigitalDownload",
-        digital ? String(digital.price) : "0"
-    );
-
-    formData.append(
-        "sessionTranscript",
-        transcript ? "true" : "false"
-    );
-
-    formData.append(
-        "priceTranscript",
-        transcript ? String(transcript.price) : "0"
-    );
-
-    console.log("=========== REQUEST DATA ===========");
-
-    for (const pair of formData.entries()) {
-        console.log(pair[0], ":", pair[1]);
     }
+
+    webinarMap[item.webinarId].trainingOptions.push({
+
+        optionName: item.optionName,
+        price: Number(item.price),
+        quantity: Number(item.quantity),
+        totalPrice: Number(item.price) * Number(item.quantity)
+
+    });
+
+});
+
+const webinars = Object.values(webinarMap);
+
+
+formData.append(
+    "webinars",
+    JSON.stringify(webinars)
+);
+
+// JSON only for API developer
+ requestJson = {
+
+    customeremail: billing.email || "",
+    billingemail: billing.email || "",
+    customername: billing.name || "",
+    country: billing.country || "",
+    zipcode: billing.zipcode || "",
+
+    paymentstatus: "purchased",
+  orderamount: Number(grandTotal).toFixed(2),
+    discount: Number(discount).toFixed(2),
+    invoice_number: "ORDER" + orderId,
+    order_datetimezone: new Date().toUTCString(),
+    Website: WEBSITE,
+
+    webinars
+
+};
+
+console.log("========== PAYMENT SUCCESS JSON ==========");
+console.log(JSON.stringify(requestJson, null, 2));
+
+formData.append("webinars", JSON.stringify(webinars));
+
+console.log("========== FORM DATA ==========");
+
+for (const [key, value] of formData.entries()) {
+    console.log(key, ":", value);
+}
+
 
     const response = await axios.post(
         `${API_URL}/order?website=${WEBSITE}`,
@@ -222,14 +229,60 @@ try {
 
 } catch (error) {
 
-    console.log("=========== ERROR ===========");
+    console.log("====================================");
+    console.log("        ORDER API FAILED");
+    console.log("====================================");
+
+    // Request sent to API
+    console.log("REQUEST URL:");
+    console.log(`${API_URL}/order?website=${WEBSITE}`);
+
+    console.log("REQUEST BODY:");
+
+    console.log("REQUEST JSON:");
+console.log(JSON.stringify(requestJson, null, 2));
+
+    console.log("====================================");
 
     if (error.response) {
-        console.log("STATUS:", error.response.status);
-        console.log("DATA:", error.response.data);
+
+        console.log("STATUS CODE:");
+        console.log(error.response.status);
+
+        console.log("RESPONSE DATA:");
+        console.log(error.response.data);
+
+        console.log("RESPONSE HEADERS:");
+        console.log(error.response.headers);
+
+        console.log("FULL RESPONSE:");
+        console.log(error.response);
+
+        console.log("====================================");
+
+        console.log("ERROR MESSAGE:");
+        console.log(
+            error.response.data?.message ||
+            error.response.data?.error ||
+            error.message
+        );
+
+    } else if (error.request) {
+
+        console.log("NO RESPONSE RECEIVED");
+        console.log(error.request);
+
     } else {
-        console.log(error);
+
+        console.log("AXIOS ERROR");
+        console.log(error.message);
+
     }
+
+    console.log("COMPLETE ERROR OBJECT:");
+    console.log(error);
+
+    console.log("====================================");
 
 }
 

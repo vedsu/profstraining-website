@@ -599,6 +599,21 @@ const addToCart = () => {
     height:18px;
     cursor:pointer;
 }
+
+.detail-icon{
+    font-size:16px;
+   color: #cdc4c4;
+    margin-right:15px;
+    margin-top:4px;
+    flex-shrink:0;
+}
+
+button.btn_one.webinar-details {
+    padding: 8px 20px !important;
+    font-size: 15px;
+    border-radius: 4px;
+    min-width: 140px;
+}
 		
 	 `}</style>
 		
@@ -608,62 +623,171 @@ const addToCart = () => {
 					<div className="col-12 col-lg-8">
 						<div className="single_event_single">
 							
-							<div className="single_event_text_single">
-							
-								<span>
-									  <i className="fa fa-calendar"></i>
+							<div className="card shadow-sm border-0 mb-4 webinar-info-card">
 
-									  {new Date(webinar.date).toLocaleDateString("en-US", {
-										month: "long",
-										day: "numeric",
-										year: "numeric",
-									  })}
+  <div className="card-body">
 
-									  {" , "}
-									    
-                 
-									{new Date(`2000-01-01 ${webinar.time}`).toLocaleTimeString("en-US", {
-										hour: "2-digit",
-										minute: "2-digit",
-										hour12: true,
-									  })} ET
-              
-									 
-								</span>
-								<span>
-								  <i className="fa fa-clock-o"></i>
-								  {webinar.duration} Minutes
-								</span>
-								<span>
-								  <i className="fa fa-calendar-plus-o"></i>
-								  {webinar.category}
-								</span>
-								<span>
-								  <i className="fa fa-laptop"></i>
-								
-								   {webinar.sessionLive === true
-										? "Live Webinar"
-										: "On-Demand Webinar"}
-								</span>
-									
-								<button
-								  onClick={() =>
-									window.open(
-									  `/order-form/${webinar.webinar_url}`,
-									  "_blank"
-									)
-								  }
-								  className="btn_one"
-								>
-								  Order Form
-								</button>
-								
-								 <div
-								  dangerouslySetInnerHTML={{
-									__html: webinar.description,
-								  }}
-								/>
-							</div>
+    <div className="row g-4">
+
+      {/* Date */}
+      <div className="col-lg-3 col-md-6 col-12">
+
+        <div className="d-flex">
+
+        <i className="fa fa-calendar detail-icon"></i>
+
+          <div>
+
+            <small className="text-muted d-block">
+              Date
+            </small>
+
+            <strong>
+
+              {webinar.sessionLive ? (
+                new Date(webinar.date).toLocaleDateString("en-US",{
+                  weekday:"long",
+                  month:"long",
+                  day:"numeric",
+                  year:"numeric",
+                })
+              ) : (
+                "All Days"
+              )}
+
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      {/* Time */}
+
+      <div className="col-lg-3 col-md-6 col-12">
+
+        <div className="d-flex">
+
+          <i className="fa fa-clock-o detail-icon"></i>
+
+          <div>
+
+            <small className="text-muted d-block">
+              Time
+            </small>
+
+            <strong>
+
+              {webinar.sessionLive ? (
+                <>
+                  {new Date(`2000-01-01 ${webinar.time}`).toLocaleTimeString(
+                    "en-US",
+                    {
+                      hour:"2-digit",
+                      minute:"2-digit",
+                      hour12:true,
+                    }
+                  )} ET
+                </>
+              ) : (
+                <>
+                  <b>Access:</b> 6 Months
+                </>
+              )}
+
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      {/* Duration */}
+
+      <div className="col-lg-3 col-md-6 col-12">
+
+        <div className="d-flex">
+
+         <i className="fa fa-hourglass-half detail-icon"></i>
+
+          <div>
+
+            <small className="text-muted d-block">
+              Duration
+            </small>
+
+            <strong>
+
+              {webinar.sessionLive
+                ? `${webinar.duration} Minutes`
+                : "6 Months"}
+
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      {/* Webinar ID */}
+
+      <div className="col-lg-3 col-md-6 col-12">
+
+        <div className="d-flex">
+
+          <i className="fa fa-id-card detail-icon"></i>
+
+          <div>
+
+            <small className="text-muted d-block">
+              Webinar ID
+            </small>
+
+            <strong>
+              {`PT${webinar.speaker_id}00${webinar.id}`}
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <hr />
+
+    <div className="text-lg-end text-center">
+
+      <button
+        className="btn_one webinar-details"
+        onClick={() =>
+          window.open(
+            `/order-form/${webinar.webinar_url}`,
+            "_blank"
+          )
+        }
+      >
+        Order Form
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: webinar.description,
+  }}
+/>
 						</div>
                             <div className="course-details-content section-bg">
                                 <ul className="nav nav-tabs" role="tablist">

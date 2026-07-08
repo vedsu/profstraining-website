@@ -19,36 +19,33 @@ function Navbar() {
 
 
 	
-	useEffect(() => {
-
+useEffect(() => {
   const timer = setTimeout(() => {
-
     if (window.$ && window.$.fn.simpleMobileMenu) {
+
+      window.$("#sm_menu_ham").remove();
+      window.$(".sm_menu_outer").remove();
+
+      if (!window.$(".mobile_menu").parent().is("body")) {
+        window.$(".mobile_menu").appendTo("body");
+      }
+
       window.$(".mobile_menu").simpleMobileMenu();
     }
+  }, 300);
 
-  }, 500);
-
-const updateCartCount = () => {
+  const updateCartCount = () => {
     const cart = JSON.parse(sessionStorage.getItem("cart") || "[]");
     setCartCount(cart.length);
-};
+  };
 
   updateCartCount();
   window.addEventListener("cartUpdated", updateCartCount);
 
-  
- return () => {
-
+  return () => {
     clearTimeout(timer);
-
-    window.removeEventListener(
-        "cartUpdated",
-        updateCartCount
-    );
-
-};
-
+    window.removeEventListener("cartUpdated", updateCartCount);
+  };
 }, []);
 	
   return (
@@ -190,22 +187,99 @@ const updateCartCount = () => {
 
 			</div>
             <ul className="mobile_menu">
-              <li><Link	to="/">Home</Link></li>
-              <li><Link	to="/about">About</Link></li>
+  <li><Link to="/">Home</Link></li>
+  <li><Link to="/about">About</Link></li>
 
-              <li className="menu-item-has-children">
-                <Link to="#">Browse Courses</Link>
-                <ul>
-                  <li><Link	to="/webinars">All</Link></li>
-                  <li><Link	to="/live-webinars">Live Webinars</Link></li>
-                  <li><Link	to="/on-demand-webinars">On Demand Webinars</Link></li>
-                </ul>
-              </li>
+  <li className="menu-item-has-children">
+    <Link to="#">Browse Courses</Link>
+    <ul>
+      <li><Link to="/webinars">All</Link></li>
+      <li><Link to="/live-webinars">Live Webinars</Link></li>
+      <li><Link to="/on-demand-webinars">On Demand Webinars</Link></li>
+      <li><Link to="/newsletters">Newsletters</Link></li>
+    </ul>
+  </li>
 
-              <li><Link	to="/speakers">Speakers</Link></li>
-              <li><Link	to="/faq">Faq</Link></li>
-              <li><Link	to="/contact">Contact</Link></li>
-            </ul>
+  <li><Link to="/speakers">Speakers</Link></li>
+  <li><Link to="/faq">Faq</Link></li>
+  <li><Link to="/contact">Contact</Link></li>
+
+  {/* Login State */}
+  {!userInfo ? (
+    <>
+      <li>
+        <Link to="/login-register">
+          <i className="fa fa-user me-2"></i> Login / Register
+        </Link>
+      </li>
+
+      <li>
+        <Link to="/cart">
+          <i className="fa fa-shopping-cart me-2"></i>
+          Cart
+          {cartCount > 0 && (
+            <span
+              style={{
+                background: "red",
+                color: "#fff",
+                borderRadius: "50%",
+                padding: "2px 7px",
+                marginLeft: "8px",
+                fontSize: "12px",
+              }}
+            >
+              {cartCount}
+            </span>
+          )}
+        </Link>
+      </li>
+
+      <li>
+        <Link to="/request-callback">
+          Request Callback
+        </Link>
+      </li>
+    </>
+  ) : (
+    <>
+      <li>
+        <Link to="/dashboard">
+          <i className="fa fa-dashboard me-2"></i>
+          Dashboard
+        </Link>
+      </li>
+
+      <li>
+        <Link to="/cart">
+          <i className="fa fa-shopping-cart me-2"></i>
+          Cart
+          {cartCount > 0 && (
+            <span
+              style={{
+                background: "red",
+                color: "#fff",
+                borderRadius: "50%",
+                padding: "2px 7px",
+                marginLeft: "8px",
+                fontSize: "12px",
+              }}
+            >
+              {cartCount}
+            </span>
+          )}
+        </Link>
+      </li>
+
+      <li>
+       
+		
+		 <Link onClick={logout}	>
+					 <i className="fa fa-sign-out me-2"></i> Logout
+				  </Link>
+      </li>
+    </>
+  )}
+</ul>
           </div>
         </div>
       </div>

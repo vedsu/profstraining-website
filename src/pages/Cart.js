@@ -181,108 +181,113 @@ const savePendingOrder = async () => {
 
     try {
 
-        const formData = new FormData();
+        // =========================
+        // Build Multiple Webinar Array
+        // =========================
 
-        formData.append("customeremail", billing.email);
-        formData.append("billingemail", billing.email);
-        formData.append("customername", billing.name);
+        const webinarMap = {};
 
-        formData.append("country", billing.country);
-        formData.append("state", billing.state);
-        formData.append("zipcode", billing.zipcode);
+        cartItems.forEach((item) => {
 
-        formData.append("paymentstatus", "Pending");
-        formData.append("orderamount", finalTotal);
+            if (!webinarMap[item.webinarId]) {
 
-        formData.append("invoice_number", "null");
+                webinarMap[item.webinarId] = {
 
-        formData.append(
-            "order_datetimezone",
-            new Date().toUTCString()
-        );
+                    webinarId: item.webinarId,
+                    topic: item.title,
+                    webinardate: item.date,
+                    speaker: item.speaker,
+                    webinar_url: item.webinar_url,
 
-        formData.append("Website", WEBSITE);
+                    trainingOptions: []
+
+                };
+
+            }
+
+            webinarMap[item.webinarId].trainingOptions.push({
+
+                optionName: item.optionName,
+                price: Number(item.price),
+                quantity: Number(item.quantity),
+                totalPrice: Number(item.totalPrice)
+
+            });
+
+        });
+
+        const webinars = Object.values(webinarMap);
 
         // =========================
-// Build Multiple Webinar Array
-// =========================
+        // Final JSON Request
+        // =========================
+const payableAmount = Number(finalTotal).toFixed(2);
+const discountAmount = Number(discount).toFixed(2);
+        const requestBody = {
 
-const webinarMap = {};
+            customeremail: billing.email,
+            billingemail: billing.email,
+            customername: billing.name,
+            country: billing.country,
+            state: billing.state,
+            zipcode: billing.zipcode,
 
-cartItems.forEach((item) => {
+            paymentstatus: "Pending",
+            orderamount: payableAmount,
+			   discount: discountAmount,
+            invoice_number: "null",
+            order_datetimezone: new Date().toUTCString(),
+            Website: WEBSITE,
 
-    if (!webinarMap[item.webinarId]) {
-
-        webinarMap[item.webinarId] = {
-
-            webinarId: item.webinarId,
-            topic: item.title,
-            webinardate: item.date,
-            speaker: item.speaker,
-            webinar_url: item.webinar_url,
-
-            trainingOptions: []
+            webinars
 
         };
 
-    }
-
-    webinarMap[item.webinarId].trainingOptions.push({
-
-        optionName: item.optionName,
-        price: Number(item.price),
-        quantity: Number(item.quantity),
-        totalPrice: Number(item.totalPrice)
-
-    });
-
-});
-
-const webinars = Object.values(webinarMap);
-
-// send to backend
-formData.append(
-    "webinars",
-    JSON.stringify(webinars)
-);
-
-console.log("========== WEBINARS ==========");
-console.log(webinars);
-
-        console.log("=========== REQUEST ===========");
-
-        const requestObj = {};
-
-        for (const [key, value] of formData.entries()) {
-            requestObj[key] = value;
-        }
-
-        console.log(requestObj);
+        console.log("====================================");
+        console.log("ORDER REQUEST JSON");
+        console.log("====================================");
+        console.log(JSON.stringify(requestBody, null, 2));
 
         const response = await axios.post(
-		
+
             `${API_URL}/order?website=${WEBSITE}`,
-            formData,
+
+            requestBody,
+
             {
                 headers: {
-                    "Content-Type": "multipart/form-data"
+                    "Content-Type": "application/json"
                 }
             }
+
         );
 
-        console.log("=========== RESPONSE ===========");
+        console.log("====================================");
+        console.log("ORDER RESPONSE");
+        console.log("====================================");
         console.log(response.data);
-		return response.data; // <-- Return response
+
+        return response.data;
 
     } catch (error) {
 
-        console.log("=========== ERROR ===========");
+        console.log("====================================");
+        console.log("ORDER API FAILED");
+        console.log("====================================");
 
         if (error.response) {
-            console.log(error.response.data);
+
+            console.log("STATUS :", error.response.status);
+            console.log("DATA :", error.response.data);
+            console.log("HEADERS :", error.response.headers);
+
         } else {
-            console.log(error.message);
+
+            console.log(error);
+
         }
+
+        return null;
 
     }
 
@@ -293,126 +298,135 @@ const proceedToPay = async () => {
 	const isGuest =
   sessionStorage.getItem("GUEST_CHECKOUT") === "true";
 
-    if (
-        billing.name.trim() === "" ||
-        billing.contact.trim() === "" ||
-        billing.email.trim() === "" ||
-        billing.country.trim() === "" ||
-        billing.state.trim() === "" ||
-        billing.city.trim() === "" ||
-        billing.zipcode.trim() === ""
-    ) {
-        setMessage("Please fill all billing details.");
-        return;
-    }
+		if (
+			billing.name.trim() === "" ||
+			billing.contact.trim() === "" ||
+			billing.email.trim() === "" ||
+			billing.country.trim() === "" ||
+			billing.state.trim() === "" ||
+			billing.city.trim() === "" ||
+			billing.zipcode.trim() === ""
+		) {
+			setMessage("Please fill all billing details.");
+			return;
+		}
 
-    // Save Billing
-    sessionStorage.setItem(
-        "billingDetails",
-        JSON.stringify(billing)
-    );
+			// Save Billing
+			sessionStorage.setItem(
+				"billingDetails",
+				JSON.stringify(billing)
+			);
 
-    sessionStorage.setItem(
-        "cart",
-        JSON.stringify(cartItems)
-    );
+			sessionStorage.setItem(
+				"cart",
+				JSON.stringify(cartItems)
+			);
 
-    sessionStorage.setItem("subtotal", grandTotal);
-    sessionStorage.setItem("discount", discount);
-    sessionStorage.setItem("grandTotal", finalTotal);
-    sessionStorage.setItem("couponCode", discount > 0 ? couponCode : "");
+			sessionStorage.setItem("subtotal", grandTotal);
+			sessionStorage.setItem("discount", discount);
+			sessionStorage.setItem("grandTotal", finalTotal);
+			sessionStorage.setItem("couponCode", discount > 0 ? couponCode : "");
 
-    sessionStorage.setItem(
-        "order_datetimezone",
-        new Date().toUTCString()
-    );
+			sessionStorage.setItem(
+				"order_datetimezone",
+				new Date().toUTCString()
+			);
 
-    sessionStorage.setItem(
-        "invoice_number",
-        "null"
-    );
+			sessionStorage.setItem(
+				"invoice_number",
+				"null"
+			);
 
-    // Save Pending Order
+			// Save Pending Order
   
 	
 	
 	
-	if (isGuest) {
+			if (isGuest) 
+			{
 
-    const password =
-        billing.name.replace(/\s/g, "") +
-        Math.floor(1000 + Math.random() * 9000);
+					const password =
+						billing.name.replace(/\s/g, "") +
+						Math.floor(1000 + Math.random() * 9000);
 
-    const formData = new FormData();
+					const formData = new FormData();
 
-    formData.append("Name", billing.name);
-    formData.append("Email", billing.email);
-    formData.append("Password", password);
-    formData.append("Contact", billing.contact);
-    formData.append("Role", "");
-    formData.append("UserType", "Attendee");
-    formData.append("Website", WEBSITE);
+					formData.append("Name", billing.name);
+					formData.append("Email", billing.email);
+					formData.append("Password", password);
+					formData.append("Contact", billing.contact);
+					formData.append("Role", "");
+					formData.append("UserType", "Attendee");
+					formData.append("Website", WEBSITE);
 
-    try {
-		
-		setMessage("");
-		setMessageType("");
+				try {
+					
+							setMessage("");
+							setMessageType("");
 
-        const registerResponse = await axios.post(
-            `${API_URL}/register`,
-            formData,
-            {
-                headers: {
-                    "Content-Type": "multipart/form-data"
-                }
-            }
-        );
+							const registerResponse = await axios.post(
+								`${API_URL}/register`,
+								formData,
+								{
+									headers: {
+										"Content-Type": "multipart/form-data"
+									}
+								}
+							);
 
-        if (registerResponse.data.success) {
+							if (registerResponse.data.success) {
 
-            setMessage("");
-			setMessageType("");
+								setMessage("");
+								setMessageType("");
 
-			sessionStorage.setItem(
-				"USERINFO",
-				JSON.stringify(registerResponse.data.message)
-			);
+								sessionStorage.setItem(
+									"USERINFO",
+									JSON.stringify(registerResponse.data.message)
+								);
 
-        }
+							}
 
-    } catch (error) {
+					} catch (error) 
+					{
 
-    if (error.response?.status === 203) {
+						if (error.response?.status === 203) {
 
-        setMessage(
-            error.response.data.message ||
-            "User already registered."
-        );
+							setMessage(
+								error.response.data.message ||
+								"User already registered."
+							);
 
-        setMessageType("error");
+							setMessageType("error");
 
-        return;
-    }
+							return;
+						}
 
-    setMessage("Registration failed.");
-    setMessageType("error");
+						setMessage("Registration failed.");
+						setMessageType("error");
 
-    console.log(error);
-}
+						console.log(error);
+					}
 
-	}
+			}
 	
 	//const insertId = response.data.insert_id;
 	
 	const response = await savePendingOrder();
 
-	console.log("FULL RESPONSE:", response);
+if (!response) {
+    alert("Unable to save order.");
+    return;
+}
 
-	const insertId = response[0][0].message.id;
+console.log("FULL RESPONSE");
+console.log(response);
 
-	console.log("Insert ID:", insertId);
+// according to your API response
+const insertId = response[0][0].message.id;
 
-	sessionStorage.setItem("orderId", insertId);
+console.log("Insert ID :", insertId);
+
+sessionStorage.setItem("orderId", insertId);
 
 
     // Go to Order Review

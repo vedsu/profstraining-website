@@ -159,30 +159,32 @@ const onDemandWebinars = webinars.filter(
   
   
   
-   if (window.$ && window.$.fn.owlCarousel) {
-    window.$("#testimonial-slider2").owlCarousel({
-      items: 2,
-      loop: true,
-      autoplay: true,
-      autoplayTimeout: 3000,
-      margin: 30,
-      nav: true,
-      dots: true,
-      responsive: {
-        0: {
-          items: 1,
-        },
-        768: {
-          items: 2,
-        },
-        1200: {
-          items: 3,
-        },
-      },
-    });
-  } else {
-    console.log("Owl Carousel not loaded");
-  }
+	if (window.$ && window.$.fn.owlCarousel) 
+	{
+
+		  const $slider = window.$("#testimonial-slider2");
+
+		  if ($slider.hasClass("owl-loaded")) {
+			$slider.data("owlCarousel").destroy();
+			$slider.removeClass("owl-loaded");
+			$slider.find(".owl-wrapper-outer").children().unwrap();
+		  }
+
+		  $slider.owlCarousel({
+			items: 2,
+			itemsDesktop: [1400, 2],
+			itemsDesktopSmall: [1199, 3],
+			itemsTablet: [1024, 2],
+			itemsMobile: [767, 1],
+
+			pagination: true,
+			navigation: true,
+			navigationText: ["", ""],
+			slideSpeed: 1000,
+			autoPlay: true
+		  });
+
+	}
 
 }, 
  []);
@@ -214,22 +216,85 @@ const onDemandWebinars = webinars.filter(
 						<img src="/assets/img/home-img1.png" className="img-fluid" alt="" />
 					</div>
 				</div>
-				<div className="col-lg-6 col-sm-12 col-xs-12">
-					<div className="hero-text2 ht_top">
-						<h1>Expand Your Compliance Expertise Through Interactive Expert-Led Webinars</h1>
-						<p>
-							Stay informed and competitive with live and on-demand webinars covering Healthcare, HR, Pharmaceuticals, Compliance, and Corporate Training, led by experienced industry professionals.
-						</p>
-					</div>
-					<div className="home_sb2">
-						<form action="#" className="banner_subs2">
-							<input type="text" className="form-control home_si2"  placeholder="Search your webinar here"  value={searchKeyword} onChange={(e) => setSearchKeyword(e.target.value)} />
-							<button type="button" className="subscribe__btn" onClick={() => navigate(`/webinars?keyword=${encodeURIComponent(searchKeyword)}`)} > Search <i className="fa fa-paper-plane-o"></i>
-							</button>
-						</form>
-					</div>
-					
-				</div>
+				<div className="col-lg-6 col-md-12">
+
+    <div className="hero-right">
+
+        <div className="hero-boxes">
+		
+		 <div className="hero-card card-two">
+                <div className="hero-icon">
+                    <i className="fa fa-desktop"></i>
+                </div>
+
+                <div>
+                    <h5>Live Webinars</h5>
+                    <p>
+                        Join live interactive sessions with industry professionals.
+                    </p>
+                </div>
+            </div>
+
+            <div className="hero-card card-one">
+                <div className="hero-icon">
+                    <i className="fa fa-video-camera"></i>
+                </div>
+
+                <div>
+                    <h5>Recorded Webinars</h5>
+                    <p>
+                        Watch expert-led recorded webinars anytime at your convenience.
+                    </p>
+                </div>
+            </div>
+
+           
+
+            <div className="hero-card card-three">
+                <div className="hero-icon">
+                    <i className="fa fa-handshake-o"></i>
+                </div>
+
+                <div>
+                    <h5>Sponsorship Program</h5>
+                    <p>
+                        Promote your business through webinar sponsorship opportunities.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div className="home_sb2 mt-4">
+
+            <form className="banner_subs2">
+
+                <input
+                    type="text"
+                    className="form-control home_si2"
+                    placeholder="Search Your Webinar Here"
+                    value={searchKeyword}
+                    onChange={(e)=>setSearchKeyword(e.target.value)}
+                />
+
+                <button
+                    type="button"
+                    className="subscribe__btn"
+                    onClick={() =>
+                        navigate(`/webinars?keyword=${encodeURIComponent(searchKeyword)}`)
+                    }
+                >
+                    Search
+                    <i className="fa fa-paper-plane"></i>
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
 			</div>
 		</div>
 	</section>
