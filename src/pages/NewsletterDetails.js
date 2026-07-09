@@ -414,30 +414,99 @@ function NewsletterDetails() {
     margin-top:60px;
     padding-top:50px;
     border-top:1px solid #ececec;
-    text-align:center;
 }
 
-.newsletter-author h3{ font-size:36px; font-weight:700; color:#111; margin-bottom:12px; }
-.newsletter-author p{ font-size:18px; color:#666; margin-bottom:35px; }
+.author-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:50px;
+    flex-wrap:wrap;
+}
+
+.author-left{
+    flex:1;
+}
+
+.author-left h3{
+    font-size:25px;
+    font-weight:700;
+    color:#111;
+    margin-bottom:12px;
+}
+
+.author-left p{
+    font-size:18px;
+    color:#666;
+    margin-bottom:25px;
+}
+
+.author-social a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:48px;
+    height:48px;
+    margin-right:12px;
+    border-radius:50%;
+    background:#525fe1;
+    color:#fff;
+    text-decoration:none;
+    font-size:22px;
+    transition:.3s;
+}
+
+.author-social a:hover{
+    background:#525fe1;
+    color:#fff;
+}
+
+.author-right{
+    width:220px;
+    text-align:center;
+}
 
 .author-image{
     width:180px;
     height:180px;
-    margin:0 auto 1px;
     border-radius:50%;
     overflow:hidden;
     border:6px solid #fff;
     box-shadow:0 10px 30px rgba(0,0,0,.15);
+    margin:0 auto 15px;
 }
 
-.author-image img{ width:100%; height:100%; object-fit:cover; }
+.author-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
 
-.author-sign{
-    display:block;
-    max-width:420px;
-    width:18%;
-    margin:20px auto 0;
-    height:auto;
+.author-name{
+    font-size:28px;
+    font-weight:700;
+    color:#111;
+    margin-bottom:4px;
+}
+
+.author-title{
+    color:#666;
+    font-size:15px;
+}
+
+@media(max-width:768px){
+    .author-row{
+        flex-direction:column-reverse;
+        text-align:center;
+    }
+
+    .author-left{
+        text-align:center;
+    }
+
+    .author-left h3{
+        font-size:32px;
+    }
 }
 
 @media(max-width:768px){
@@ -740,17 +809,57 @@ hr.nl-divider{ border:none; border-top:1px solid #eee; margin:14px 0; }
               {/* ─────────────────────────────────────────────────────── */}
 
               <div className="newsletter-author">
-                <h3>Enjoy this article?</h3>
-                <p>Subscribe to never miss an issue.</p>
-                <div className="author-image">
-                  <img src="/assets/img/brianpro2.jpg" alt="Brian Edmonds" />
-                </div>
-                <img
-                  src="/assets/img/brian.png"
-                  alt="Brian Edmonds"
-                  className="author-sign"
-                />
-              </div>
+  <div className="author-row">
+
+    {/* Left Side */}
+    <div className="author-left">
+      <h3>Enjoy this article?</h3>
+
+      <p>Subscribe to never miss an issue.</p>
+
+      <div className="author-social">
+
+        <a
+          href="https://www.linkedin.com/in/brian-edmonds-vedsu/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i className="bi bi-linkedin"></i>
+        </a>
+
+        <a
+          href="https://www.instagram.com/iambrianedmonds/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i className="bi bi-instagram"></i>
+        </a>
+
+      </div>
+    </div>
+
+    {/* Right Side */}
+    <div className="author-right">
+
+      <div className="author-image">
+        <img
+          src="/assets/img/brianpro2.jpg"
+          alt="Brian Edmonds"
+        />
+      </div>
+
+      <div className="author-name">
+        Brian Edmonds
+      </div>
+
+      <div className="author-title">
+        Compliance Expert
+      </div>
+
+    </div>
+
+  </div>
+</div>
 
             </div>
           </div>
