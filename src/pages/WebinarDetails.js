@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 import axios from "axios";
+import { decode } from "html-entities";
 import { API_URL, WEBSITE } from "../config";
+
+
 
 
 function WebinarDetails() {
@@ -206,7 +209,7 @@ const handleModalRegister = async (e) => {
 };
 
 
-
+console.log(decode(webinar.description));
 
 const addToCart = () => {
 
@@ -614,6 +617,33 @@ button.btn_one.webinar-details {
     border-radius: 4px;
     min-width: 140px;
 }
+
+
+
+
+
+.webinar-description{
+    font-size:16px;
+    line-height:1.9;
+}
+
+.webinar-description p{
+    margin-bottom:18px;
+}
+
+.webinar-description ul{
+    margin:15px 0;
+    padding-left:22px;
+}
+
+.webinar-description li{
+    list-style:disc;
+    margin-bottom:8px;
+}
+
+.webinar-description strong{
+    font-weight:700;
+}
 		
 	 `}</style>
 		
@@ -630,38 +660,41 @@ button.btn_one.webinar-details {
     <div className="row g-4">
 
       {/* Date */}
-      <div className="col-lg-3 col-md-6 col-12">
+      {/* Date */}
+<div className="col-lg-3 col-md-6 col-12">
+  <div className="d-flex">
+    <i className="fa fa-calendar detail-icon"></i>
 
-        <div className="d-flex">
+    <div>
+      {webinar.sessionLive ? (
+        <>
+          <small className="text-muted d-block">
+            Date
+          </small>
 
-        <i className="fa fa-calendar detail-icon"></i>
+          <strong>
+            {new Date(webinar.date).toLocaleDateString("en-US", {
+              weekday: "long",
+              month: "long",
+              day: "numeric",
+              year: "numeric",
+            })}
+          </strong>
+        </>
+      ) : (
+        <>
+          <small className="text-muted d-block">
+            Available
+          </small>
 
-          <div>
-
-            <small className="text-muted d-block">
-              Date
-            </small>
-
-            <strong>
-
-              {webinar.sessionLive ? (
-                new Date(webinar.date).toLocaleDateString("en-US",{
-                  weekday:"long",
-                  month:"long",
-                  day:"numeric",
-                  year:"numeric",
-                })
-              ) : (
-                "All Days"
-              )}
-
-            </strong>
-
-          </div>
-
-        </div>
-
-      </div>
+          <strong>
+            All Days
+          </strong>
+        </>
+      )}
+    </div>
+  </div>
+</div>
 
 
       {/* Time */}
@@ -673,15 +706,15 @@ button.btn_one.webinar-details {
           <i className="fa fa-clock-o detail-icon"></i>
 
           <div>
-
+ {webinar.sessionLive ? (
+                <>
             <small className="text-muted d-block">
               Time
             </small>
 
             <strong>
 
-              {webinar.sessionLive ? (
-                <>
+             
                   {new Date(`2000-01-01 ${webinar.time}`).toLocaleTimeString(
                     "en-US",
                     {
@@ -690,14 +723,19 @@ button.btn_one.webinar-details {
                       hour12:true,
                     }
                   )} ET
+				   </strong>
                 </>
               ) : (
                 <>
-                  <b>Access:</b> 6 Months
+				  <small className="text-muted d-block">
+              Access
+            </small>
+                 <strong> 6 Months
+				 </strong>
                 </>
               )}
 
-            </strong>
+           
 
           </div>
 
@@ -722,9 +760,8 @@ button.btn_one.webinar-details {
 
             <strong>
 
-              {webinar.sessionLive
-                ? `${webinar.duration} Minutes`
-                : "6 Months"}
+              
+                {webinar.duration} Minutes
 
             </strong>
 
@@ -784,11 +821,14 @@ button.btn_one.webinar-details {
 </div>
 
 <div
+  className="webinar-description"
   dangerouslySetInnerHTML={{
-    __html: webinar.description,
+    __html: decode(webinar.description || "").replace(
+      /(<li>[\s\S]*?<\/li>)+/g,
+      (match) => `<ul>${match}</ul>`
+    ),
   }}
-/>
-						</div>
+/>					</div>
                             <div className="course-details-content section-bg">
                                 <ul className="nav nav-tabs" role="tablist">
                                   
@@ -819,11 +859,11 @@ button.btn_one.webinar-details {
                                                 </div>
                                             </div>
                                            <div
-											  className="speaker-bio"
-											  dangerouslySetInnerHTML={{
-												__html: webinar.speaker_bio || ""
-											  }}
-											/>
+  className="speaker-bio"
+  dangerouslySetInnerHTML={{
+    __html: decode(webinar.speaker_bio || ""),
+  }}
+/>
 
                                           
                                         </div>
