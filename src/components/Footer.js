@@ -1,8 +1,35 @@
 import React from "react";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 function Footer() {
   return (
+  
+
     <>
+	
+	  <style>{`
+  .footer_social h5{
+    color:#525fe1;
+    font-size:16px;
+    font-weight:600;
+    margin-bottom:12px;
+}
+
+.footer_social a{
+    display:inline-block;
+    margin-right:12px;
+    font-size:22px;
+    color:#525fe1;
+    transition:0.3s;
+}
+/*
+.footer_social a:hover{
+    color:#f9b233;  Theme color 
+}
+  */
+  
+  
+  `}</style>
       <div className="footer section-padding">
         <div className="container">
           <div className="row">
@@ -13,7 +40,8 @@ function Footer() {
                 <div className="sf_contact">
                   <span className="ti-map"></span>
                   <p>
-                    2438 Industrial Blvd #1003 Abilene,<br/> TX 79605 United State
+                   
+					3524 Silverside Road Suit 35B Wilmington,<br/> DE 19810-4929 United State
                   </p>
                 </div>
 
@@ -89,6 +117,33 @@ function Footer() {
                     <a href="/subscribe">Subscribe Now</a>
                   </li>
                 </ul>
+				 <div className="footer_social mt-4">
+      <h5>Follow Us</h5>
+
+      <a
+        href="https://www.youtube.com/@BrianEdmonds-profs"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i className="bi bi-youtube"></i>
+      </a>
+
+      <a
+        href="https://www.linkedin.com/company/90914223/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i className="bi bi-linkedin"></i>
+      </a>
+
+      <a
+        href="https://www.facebook.com/profile.php?id=100090375465921"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i className="bi bi-facebook"></i>
+      </a>
+    </div>
               </div>
             </div>
           </div>
