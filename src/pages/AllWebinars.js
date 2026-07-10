@@ -536,7 +536,7 @@ function AllWebinars() {
                         data-bs-toggle="pill"
                         data-bs-target="#ondemand"
                         type="button">
-                    On-Demand
+                    Recorded
                 </button>
             </li>
 
