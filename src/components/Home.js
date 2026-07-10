@@ -194,6 +194,96 @@ const onDemandWebinars = webinars.filter(
 
   <>
   
+  <style>{`
+  /* iPad Pro */
+/* ===========================
+   iPad Pro (768px - 1194px)
+=========================== */
+
+@media only screen and (min-width:768px) and (max-width:1194px){
+
+    /* Hero Section */
+    .home_bg{
+        padding:60px 0;
+        min-height:auto !important;
+        height:auto !important;
+    }
+
+    /* Hide left image column */
+    .home_bg .row > div:first-child{
+        display:none !important;
+    }
+
+    /* Right column full width */
+    .home_bg .row > div:last-child{
+        flex:0 0 100%;
+        max-width:100%;
+    }
+
+    /* Hero Content */
+    .hero-right{
+        width:100%;
+        max-width:900px;
+        margin:0 auto;
+        padding:0;
+    }
+
+    /* Search Box */
+    .home_sb2{
+        margin:0 0 25px;
+    }
+
+    .banner_subs2{
+        display:flex;
+        width:100%;
+    }
+
+    .home_si2{
+        flex:1;
+        height:52px;
+        font-size:15px;
+    }
+
+    .subscribe__btn{
+        height:52px;
+        padding:0 25px;
+        white-space:nowrap;
+    }
+
+    /* Cards */
+    .hero-boxes{
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:18px;
+    }
+
+    .hero-card{
+        width:100%;
+        min-height:180px;
+        margin:0;
+    }
+
+    .card-three{
+        grid-column:auto;
+    }
+
+    .hero-card h5{
+        font-size:18px;
+    }
+
+    .hero-card p{
+        font-size:14px;
+        line-height:1.6;
+    }
+	
+	 
+	
+	
+	   
+ 
+}
+  `}</style>
+  
 	<Helmet>
         <title>Expert-Led Compliance Webinars Online | Profs Training </title>
         <meta
@@ -211,12 +301,12 @@ const onDemandWebinars = webinars.filter(
   }}>
 		<div className="container">
 			<div className="row">
-				<div className="col-lg-6 col-sm-12 col-xs-12">
+				<div className="col-lg-6 col-md-6 col-12">
 					<div className="hero-text-img2">
 						<img src="/assets/img/home-img1.png" className="img-fluid" alt="" />
 					</div>
 				</div>
-				<div className="col-lg-6 col-md-12">
+				<div className="col-lg-6 col-md-6 col-12">
 
     <div className="hero-right">
 
@@ -972,6 +1062,9 @@ const onDemandWebinars = webinars.filter(
         box-shadow: 0 0 0 0 rgba(108,99,255,0);
     }
 }
+
+}
+
 	`}</style>
 
 
