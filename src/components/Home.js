@@ -1238,7 +1238,7 @@ const onDemandWebinars = webinars.filter(
 	<section className="testi_area section-padding">
 		<div className="container">
 			<div className="section-title">
-				<h2>Why Professionals Choose Us<br />Then the testimonial review</h2>
+				<h2>Why Professionals Choose Us</h2>
 			</div>
 			<div className="row">
 				<div className="col-lg-12 col-sm-12 col-xs-12">
