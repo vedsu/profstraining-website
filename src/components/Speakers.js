@@ -36,6 +36,14 @@ useEffect(() => {
   return (
      <>
 	 
+	 <style>{`
+	 
+	 .single_blog {
+    
+    margin-bottom: 0px;
+	 }
+	 `}</style>
+	 
 	 <Helmet>
         <title>Industry Expert Speakers | Profs Training Webinars </title>
         <meta
@@ -75,7 +83,7 @@ useEffect(() => {
     speakers.map((item) => (
 
 <div
-  className="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp"
+  className="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp mb-4"
   key={item.id}
 >
   <Link
@@ -87,25 +95,36 @@ useEffect(() => {
       height: "100%",
     }}
   >
-    <div className="single_blog">
+    <div className="single_blog h-100 d-flex flex-column">
 
-      <img
+       <img
         src={item.photo}
-        className="img-fluid"
+        className="img-fluid w-100"
         alt={item.name}
-      />
+        style={{
+            height: "210px",
+            objectFit: "cover"
+        }}
+    />
 
-      <div className="content_box text-center">
+      <div className="content_box text-center d-flex flex-column justify-content-between">
 
         <h2
-          style={{
-            color: "#222",
-          }}
-        >
-          {item.name}
-        </h2>
+  className="fw-semibold mb-2"
+  style={{
+    fontSize: "18px",
+    lineHeight: "1.3",
+    minHeight: "36px",
+    wordBreak: "break-word",
+    overflowWrap: "break-word"
+  }}
+>
+  {item.name}
+</h2>
 
-        <h6>{item.industry}</h6>
+         <h6 className="text-uppercase text-primary mb-0">
+            {item.industry}
+        </h6>
 
       </div>
 
