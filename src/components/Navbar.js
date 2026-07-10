@@ -190,15 +190,12 @@ useEffect(() => {
   <li><Link to="/">Home</Link></li>
   <li><Link to="/about">About</Link></li>
 
-  <li className="menu-item-has-children">
-    <Link to="#">Browse Courses</Link>
-    <ul>
-      <li><Link to="/webinars">All</Link></li>
+ 
+      <li><Link to="/webinars">All Webinars</Link></li>
       <li><Link to="/live-webinars">Live Webinars</Link></li>
       <li><Link to="/on-demand-webinars">On Demand Webinars</Link></li>
       <li><Link to="/newsletters">Newsletters</Link></li>
-    </ul>
-  </li>
+    
 
   <li><Link to="/speakers">Speakers</Link></li>
   <li><Link to="/faq">Faq</Link></li>
