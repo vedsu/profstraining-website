@@ -105,7 +105,7 @@ useEffect(() => {
                     <ul>
                       <li><a href="/webinars">All</a></li>
                       <li><a href="/live-webinars">Live Webinars</a></li>
-                      <li><a href="/on-demand-webinars">On Demand Webinars</a></li>
+                      <li><a href="/on-demand-webinars">Recorded Webinars</a></li>
 					   <li><a href="/newsletters">Newsletters</a></li>
                     </ul>
                   </li>
@@ -193,7 +193,7 @@ useEffect(() => {
  
       <li><Link to="/webinars">All Webinars</Link></li>
       <li><Link to="/live-webinars">Live Webinars</Link></li>
-      <li><Link to="/on-demand-webinars">On Demand Webinars</Link></li>
+      <li><Link to="/on-demand-webinars">Recorded Webinars</Link></li>
       <li><Link to="/newsletters">Newsletters</Link></li>
     
 
