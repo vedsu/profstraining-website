@@ -346,9 +346,9 @@ const onDemandWebinars = webinars.filter(
                 </div>
 
                 <div>
-                    <h5>Sponsorship Program</h5>
+                    <h5>Digital Download</h5>
                     <p>
-                        Promote your business through webinar sponsorship opportunities.
+                        Digital Download provides you the lifetime access for a webinar. So you can watch it anytime as per your convenience.
                     </p>
                 </div>
             </div>
