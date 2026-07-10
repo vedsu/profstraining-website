@@ -404,10 +404,16 @@ const addToCart = () => {
 
 
 .cart-btn-area{
-    padding: 0 20px 20px;
-    text-align: right;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
 }
 
+.cart-btn-area .cart-btn{
+    width:100%;
+    margin:0 !important;
+}
 .cart-btn{
     display: inline-block;
     background: linear-gradient(90deg,#5663e9,#6c63ff);
@@ -527,6 +533,101 @@ const addToCart = () => {
     border:none;
     font-size:30px;
     cursor:pointer;
+}
+
+@media only screen
+and (min-width: 834px)
+and (max-width: 1194px) {
+
+  .button-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+  }
+
+  .button-group .btn {
+    flex: 1;
+    padding: 12px 6px;
+    font-size: 13px;
+  }
+
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width:1199px){
+
+.training-options-box{
+    width:100%;
+}
+
+.training-item{
+    padding:14px 15px;
+}
+
+.training-left{
+    width:60%;
+    font-size:14px;
+}
+
+.training-right{
+    gap:8px;
+}
+
+.training-price{
+    min-width:55px;
+    font-size:15px;
+}
+
+.cart-btn-area{
+    padding:15px;
+}
+
+.cart-btn{
+    width:100%;
+}
+
+}
+
+@media (max-width:991px){
+
+.training-options-box{
+    margin-top:30px;
+}
+
+.cart-btn{
+    width:100%;
+}
+
+}
+
+@media (max-width:767px){
+
+.training-item{
+    flex-wrap:wrap;
+    align-items:flex-start;
+}
+
+.training-left{
+    width:100%;
+    margin-bottom:10px;
+}
+
+.training-right{
+    width:100%;
+    justify-content:space-between;
+}
+
+.training-total{
+    flex-direction:row;
+}
+
+.cart-btn-area{
+    padding:15px;
+}
+
 }
 	 `}</style>
 
