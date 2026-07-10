@@ -40,7 +40,13 @@ function SpeakerDetailsPage() {
 
   return (
     <>
+	<style>{`
+	.author_part.sp-details {
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+}
 	
+	`}</style>
 	<Helmet>
         <title>Expert Webinar Speaker | Profs Training Online  </title>
         <meta
@@ -70,7 +76,7 @@ function SpeakerDetailsPage() {
 
             <div className="col-lg-12">
 
-              <div className="author_part">
+              <div className="author_part sp-details">
 
                 <div className="single_author">
 
