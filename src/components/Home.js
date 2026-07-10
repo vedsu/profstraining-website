@@ -375,7 +375,7 @@ const onDemandWebinars = webinars.filter(
                     }
                 >
                     Search
-                    <i className="fa fa-paper-plane"></i>
+                    <i className="fa fa-paper-plane ms-2"></i>
                 </button>
 
             </form>
