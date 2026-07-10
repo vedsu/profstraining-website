@@ -12,7 +12,7 @@ function WebinarDetails() {
 
   const { slug } = useParams();
   const navigate = useNavigate();
-
+const [showFullBio, setShowFullBio] = useState(false);
   const [webinar, setWebinar] = useState(null);
   
   const [total, setTotal] = useState(0);
@@ -745,6 +745,48 @@ button.btn_one.webinar-details {
 .webinar-description strong{
     font-weight:700;
 }
+
+
+
+.speaker-section{
+    margin-top:25px;
+}
+
+.speaker-bio{
+    overflow:hidden;
+    transition:all .4s ease;
+    line-height:1.9;
+    font-size:16px;
+    color:#444;
+}
+
+/* Show only first 8 lines */
+.speaker-bio.collapsed{
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:8;
+    overflow:hidden;
+}
+
+/* Full text */
+.speaker-bio.expanded{
+    display:block;
+}
+
+.read-more-btn{
+    padding:0;
+    margin-top:15px;
+    font-weight:600;
+    color:#525fe1;
+    text-decoration:none;
+    border:none;
+    background:none;
+}
+
+.read-more-btn:hover{
+    color:#f26b65;
+    text-decoration:underline;
+}
 		
 	 `}</style>
 		
@@ -959,12 +1001,26 @@ button.btn_one.webinar-details {
                                                     <span className="details">{webinar.industry}</span>
                                                 </div>
                                             </div>
-                                           <div
-  className="speaker-bio"
-  dangerouslySetInnerHTML={{
-    __html: decode(webinar.speaker_bio || ""),
-  }}
-/>
+												<div className="speaker-section">
+
+  <div
+    className={`speaker-bio ${showFullBio ? "expanded" : "collapsed"}`}
+    dangerouslySetInnerHTML={{
+      __html: decode(webinar.speaker_bio || ""),
+    }}
+  />
+
+  {decode(webinar.speaker_bio || "").trim() !== "" && (
+    <button
+      type="button"
+      className="btn btn-link read-more-btn"
+      onClick={() => setShowFullBio(!showFullBio)}
+    >
+      {showFullBio ? "Show Less ▲" : "Read More ▼"}
+    </button>
+  )}
+
+</div>
 
                                           
                                         </div>
