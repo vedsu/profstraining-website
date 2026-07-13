@@ -2369,6 +2369,9 @@ font-size: 18px;
 
 .comment_form textarea {}
 @media only screen and (max-width:768px) { 
+	.testimonial {
+		height:480px;
+	}
     .comment_form textarea { width: 100% }
 }
 /*END SINGLE BLOG PAGE DESIGN*/
