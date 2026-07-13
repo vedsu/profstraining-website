@@ -1,4 +1,6 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import Preloader from "./components/Preloader";
 
 import AuthGuard from "./components/AuthGuard";
 import Navbar from "./components/Navbar";
@@ -389,13 +391,35 @@ function MainLayout() {
   );
 }
 
-function App() {
+
+		function AppContent() {
+
+  const location = useLocation();
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+
+    setLoading(true);
+
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1300);
+
+    return () => clearTimeout(timer);
+
+  }, [location.pathname]);
+
   return (
     <>
-     
+      {loading && <Preloader />}
       <MainLayout />
     </>
   );
+}
+
+function App() {
+  return <AppContent />;
 }
 
 export default App;
