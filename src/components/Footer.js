@@ -47,7 +47,7 @@ function Footer() {
 
                 <div className="sf_contact">
                   <span className="ti-mobile"></span>
-                  <a href="tel:+18444453653" className="footerinfo">+1 844-445-3653</a>
+                  <a href="tel:+13025205300" className="footerinfo">+1 302 5205300 </a>
                 </div>
 
                 <div className="sf_contact">
