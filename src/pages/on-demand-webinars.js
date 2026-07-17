@@ -234,13 +234,14 @@ function OndemansWebinars() {
 
     webinars.map((item) => {
 
-      const webinarDate = new Date(item.date);
+        const [year, monthNo, day] = item.date.split("-");
 
-      const month = webinarDate.toLocaleString("en-US", {
-        month: "short",
-      }).toUpperCase();
+const months = [
+  "JAN", "FEB", "MAR", "APR", "MAY", "JUN",
+  "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"
+];
 
-      const day = webinarDate.getDate();
+const month = months[parseInt(monthNo, 10) - 1];
 
       return (
 
@@ -264,17 +265,10 @@ function OndemansWebinars() {
 
               <div className="webinar-meta">
 
-                <span>
-                  <i className="fa fa-calendar"></i>
-                  {new Date(item.date).toLocaleDateString(
-                    "en-US",
-                    {
-                      month: "short",
-                      day: "numeric",
-                      year: "numeric",
-                    }
-                  )}
-                </span>
+                    <span>
+  <i className="fa fa-calendar"></i>
+  {`${month} ${day}, ${year}`}
+</span>
 				
 				  <span>
                   <i className="fa fa-clock-o"></i>
