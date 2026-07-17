@@ -229,7 +229,7 @@ function OrderForm() {
 
             <div className="logo">
               <img
-                src="https://profstraining.com/img/New%20Pharma%20Profs%20(1).png"
+                src="https://allconference.s3.amazonaws.com/New%20Pharma%20Profs%20(1).png?AWSAccessKeyId=AKIA4JNMSYDOKTNH5XP2&Expires=2072282731&Signature=41z%2BY02FDCYnY/wZcky7s4%2BLB/A%3D"
                 alt="Logo"
               />
             </div>
