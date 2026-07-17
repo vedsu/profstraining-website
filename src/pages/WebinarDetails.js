@@ -933,8 +933,8 @@ button.btn_one.webinar-details {
               Webinar ID
             </small>
 
-          strong>
-  {`${String(`PT${webinar.speaker_id}00${webinar.id}`).replace(/[A-Za-z_]/g, "")}`}
+          <strong>
+  {String(webinar.speaker_id).replace(/[A-Za-z]/g, "")}
 </strong>
 
           </div>
