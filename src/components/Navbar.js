@@ -87,7 +87,7 @@ useEffect(() => {
               <div className="site-logo">
                 <a href="/">
                   <img
-                    src="https://webinarprof.s3.us-east-1.amazonaws.com/Profstraining.png"
+                    src="/assets/img/NewPharmaProfs(1).png"
                     alt="ProfsTraining"
                   />
                 </a>
