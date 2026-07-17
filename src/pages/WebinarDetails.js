@@ -930,7 +930,7 @@ button.btn_one.webinar-details {
             </small>
 
             <strong>
-              {`PT${webinar.speaker_id}00${webinar.id}`}
+              {`${webinar.speaker_id}00${webinar.id}`}
             </strong>
 
           </div>
