@@ -638,9 +638,13 @@ and (max-width: 1194px) {
 					<div className="section-top-title wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
 						<h1>{webinar.topic}</h1>
 						<ul>
-							<li><a href="/">Home</a></li>
-							<li> / Webinars Details</li>
-						</ul>
+							<li>
+							  <span style={{ color: "#525fe1", fontWeight: "600" }}>
+							    Presented by
+							  </span>{" "}
+							  <strong>{webinar.speaker}</strong>
+							</li>
+							</ul>
 					</div>
 				</div>
 			</div>
