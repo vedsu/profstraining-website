@@ -745,14 +745,7 @@ hr.nl-divider{ border:none; border-top:1px solid #eee; margin:14px 0; }
                   })}
                 </span>
 
-                <a
-                  href={newsletter.document}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="pdf-btn"
-                >
-                  View PDF
-                </a>
+               
               </div>
 
               <h1 className="newsletter-title">{newsletter.topic}</h1>
