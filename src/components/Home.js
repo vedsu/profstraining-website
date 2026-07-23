@@ -641,7 +641,7 @@ const onDemandWebinars = webinars.filter(
 					
 					   {upcomingWebinars.length > 0 ? (
 
-						  upcomingWebinars.slice(0, 5).map((item) => {
+						  upcomingWebinars.map((item) => {
 
 						const [year, monthNo, day] = item.date.split("-");
 
