@@ -399,7 +399,42 @@ const onDemandWebinars = webinars.filter(
 
 }
 
+.hero-right{
+    position: relative;
+}
 
+.hero-boxes{
+    position: relative;
+}
+
+.card-three{
+    width: calc(100% - 120px);   /* logo ke liye right side space */
+}
+
+.hero-hrci{
+    position: absolute;
+    right: 0;
+    top: 250px;      /* apne layout ke hisab se adjust kar lena */
+    width: 95px;
+}
+
+.hero-hrci img{
+    width: 100%;
+    background: #fff;
+    border-radius: 8px;
+    padding: 4px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.15);
+}
+
+@media (max-width:1199px){
+    .card-three{
+        width:100%;
+    }
+
+    .hero-hrci{
+        display:none;
+    }
+}
 
   `}</style>
   
@@ -475,14 +510,19 @@ const onDemandWebinars = webinars.filter(
 		                </div>
             		</div>
 
-					<div className="sponsor-right desktop-only">
-
-						<a href="https://webinarprof.s3.us-east-1.amazonaws.com/certificate.pdf" target="_blank"><img
-							src="/assets/img/hrci-recertification-provider-seal.png"
-							alt="HRCI"
-						/></a>
-
-					</div>
+					
+				</div>
+			<div className="hero-hrci desktop-only">
+				    <a
+				        href="https://www.profstraining.com/assets/img/certificate.pdf"
+				        target="_blank"
+				        rel="noopener noreferrer"
+				    >
+				        <img
+				            src="/assets/img/hrci-recertification-provider-seal.png"
+				            alt="HRCI"
+				        />
+				    </a>
 				</div>
 			</div>
 
