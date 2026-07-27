@@ -199,7 +199,9 @@ const onDemandWebinars = webinars.filter(
 /* ===========================
    iPad Pro (768px - 1194px)
 =========================== */
-
+.tablet-hrci{
+    display:none;
+}
 @media only screen and (min-width:768px) and (max-width:1194px){
 
     /* Hero Section */
@@ -282,6 +284,122 @@ const onDemandWebinars = webinars.filter(
 	   
  
 }
+
+
+.sponsor-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:100%;
+}
+
+.sponsor-left{
+    display:flex;
+    align-items:flex-start;
+    gap:18px;
+    flex:1;
+}
+
+.sponsor-right{
+    margin-left:20px;
+}
+
+.sponsor-right img{
+    width:90px;
+    background:#fff;
+    border-radius:8px;
+    padding:4px;
+}
+
+/* Tablet */
+@media(max-width:1199px){
+
+.sponsor-right{
+    display:none;
+}
+
+}
+
+/* Mobile */
+@media(max-width:767px){
+
+.sponsor-right{
+    display:none;
+}
+
+}
+
+@media (min-width:1200px){
+
+.sponsor-right{
+    display:block;
+}
+
+.tablet-hrci{
+    display:none;
+}
+
+}
+
+@media (min-width:768px) and (max-width:1199px){
+
+.sponsor-right{
+    display:none;
+}
+
+.tablet-hrci{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex:0 0 70px;
+}
+
+.tablet-hrci img{
+    width:60px;
+}
+
+.hero-search-row{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.home_sb2{
+    flex:1;
+}
+
+}
+
+
+.desktop-only{
+    display:block;
+}
+
+@media(max-width:1199px){
+    .desktop-only{
+        display:none;
+    }
+}
+
+
+@media (max-width:767px){
+
+.tablet-hrci{
+    display:none !important;
+}
+
+.sponsor-right{
+    display:none !important;
+}
+
+.hero-search-row{
+    display:block;
+}
+
+}
+
+
+
   `}</style>
   
 	<Helmet>
@@ -341,19 +459,42 @@ const onDemandWebinars = webinars.filter(
            
 
             <div className="hero-card card-three">
-                <div className="hero-icon">
-                    <i className="fa fa-handshake-o"></i>
-                </div>
+			   <div className="sponsor-content">
 
-                <div>
-                    <h5>Digital Download</h5>
-                    <p>
-                        Digital Download provides you the lifetime access for a webinar. So you can watch it anytime as per your convenience.
-                    </p>
-                </div>
-            </div>
+					<div className="sponsor-left">
+		                <div className="hero-icon">
+		                    <i className="fa fa-handshake-o"></i>
+		                </div>
+
+		                <div>
+		                    <h5>Digital Download</h5>
+		                    <p>
+		                        Digital Download provides you the lifetime access for a webinar. So you can watch it anytime as per your convenience.
+		                    </p>
+		                </div>
+            		</div>
+
+					<div className="sponsor-right desktop-only">
+
+						<a href="/assets/img/certificate.pdf" target="_blank"><img
+							src="/assets/img/hrci-recertification-provider-seal.png"
+							alt="HRCI"
+						/></a>
+
+					</div>
+				</div>
+			</div>
 
         </div>
+
+		<div className="hero-search-row">
+
+			<div className="tablet-hrci">
+				<img
+					src="/assets/img/hrci-recertification-provider-seal.png"
+					alt="HRCI"
+				/>
+			</div>
 
         <div className="home_sb2 mt-4">
 
@@ -385,6 +526,7 @@ const onDemandWebinars = webinars.filter(
     </div>
 
 </div>
+						</div>
 			</div>
 		</div>
 	</section>
