@@ -477,7 +477,7 @@ const onDemandWebinars = webinars.filter(
 
 					<div className="sponsor-right desktop-only">
 
-						<a href="/assets/img/certificate.pdf" target="_blank"><img
+						<a href="https://webinarprof.s3.us-east-1.amazonaws.com/certificate.pdf" target="_blank"><img
 							src="/assets/img/hrci-recertification-provider-seal.png"
 							alt="HRCI"
 						/></a>
