@@ -514,7 +514,7 @@ const onDemandWebinars = webinars.filter(
 				</div>
 			<div className="hero-hrci desktop-only">
 				    <a
-				        href="https://www.profstraining.com/assets/img/certificate.pdf"
+				        href="https://webinarprof.s3.us-east-1.amazonaws.com/certificate.pdf"
 				        target="_blank"
 				        rel="noopener noreferrer"
 				    >
