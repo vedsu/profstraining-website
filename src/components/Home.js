@@ -408,14 +408,14 @@ const onDemandWebinars = webinars.filter(
 }
 
 .card-three{
-    width: calc(100% - 120px);   /* logo ke liye right side space */
+    width: calc(100% - 180px);   /* logo ke liye right side space */
 }
 
 .hero-hrci{
     position: absolute;
     right: 0;
-    top: 250px;      /* apne layout ke hisab se adjust kar lena */
-    width: 95px;
+    top: 210px;      /* apne layout ke hisab se adjust kar lena */
+    width: 160px;
 }
 
 .hero-hrci img{
@@ -433,6 +433,26 @@ const onDemandWebinars = webinars.filter(
 
     .hero-hrci{
         display:none;
+    }
+}
+
+
+/* Nest Hub / Small Desktop */
+@media (min-width:1200px) and (max-width:1366px){
+
+    .card-three{
+        width: calc(100% - 150px);
+    }
+
+    .hero-hrci{
+        width: 145px;
+        right: 0;
+        top: 229px;
+    }
+
+    .hero-card p{
+        font-size:14px;
+        line-height:1.5;
     }
 }
 
