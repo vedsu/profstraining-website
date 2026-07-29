@@ -908,6 +908,15 @@ const daysLeft = Math.max(
 										<i className="fa fa-hourglass-half"></i>
 										{item.duration} mins
 									  </span>
+
+
+ 									{item.certificate && item.creditScore && (
+											<span className="ms-3">
+												<i className="fa fa-certificate"></i>{" "}
+												 {item.creditScore} Credit
+											</span>
+									  )}
+											
 									</div>
 
 								</div>
