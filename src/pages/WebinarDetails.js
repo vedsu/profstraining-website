@@ -967,6 +967,42 @@ button.btn_one.webinar-details {
 
 </div>
 
+
+{webinar.certificate && webinar.certificate_description && (
+  <div className="card shadow-sm border-0 mt-4 certificate-card mb-4">
+    <div className="card-body">
+
+      <div className="row align-items-center">
+
+        <div className="col-lg-2 col-md-3 col-sm-3 col-12 text-center mb-3 mb-md-0">
+
+          <img
+            src={webinar.certificate_image}
+            alt={webinar.certificate}
+            className="img-fluid certificate-logo"
+          />
+
+        </div>
+
+        <div className="col-lg-10 col-md-9 col-sm-9 col-12">
+
+             <div
+            className="certificate-description"
+            dangerouslySetInnerHTML={{
+              __html: decode(webinar.certificate_description || "")
+            }}
+          />
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+)}
+
+			
+
 <div
   className="webinar-description"
   dangerouslySetInnerHTML={{
