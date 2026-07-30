@@ -113,7 +113,7 @@ function Contact() {
             >
               <div className="single_address sa_one">
                 <i className="ti-mobile"></i>
-                <h4>Telephone</h4>
+                <h4>Support Team</h4>
                 <p>
 				  <a
 					href="tel:+18444453653"
