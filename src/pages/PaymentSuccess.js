@@ -481,7 +481,7 @@ return (
 
 						<h5>Order Number</h5>
 
-						<h3>{displayOrderId}</h3>
+						<h3>PT{displayOrderId}</h3>
 
 					</div>
 
