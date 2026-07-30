@@ -551,10 +551,16 @@ const onDemandWebinars = webinars.filter(
 		<div className="hero-search-row">
 
 			<div className="tablet-hrci">
+								 <a
+				        href="https://webinarprof.s3.us-east-1.amazonaws.com/certificate.pdf"
+				        target="_blank"
+				        rel="noopener noreferrer"
+				    >
 				<img
 					src="/assets/img/hrci-recertification-provider-seal.png"
 					alt="HRCI"
 				/>
+						</a>
 			</div>
 
         <div className="home_sb2 mt-4">
@@ -1096,9 +1102,13 @@ const month = months[parseInt(monthNo, 10) - 1];
 				</div>
 				<div className="col-lg-4 col-sm-4 col-xs-12 text-center">
 					<div className="partner">
-						<a href="#"><img src="/assets/img/clients/shrm_logo.jpg" alt="image" /></a>
+						 <a href="https://webinarprof.s3.us-east-1.amazonaws.com/certificate.pdf"
+				        target="_blank"
+				        rel="noopener noreferrer"
+				    ><img src="/assets/img/hrci-recertification-provider-seal.png" alt="image" />
+							</a>
 						
-						<a href="#"><img src="/assets/img/clients/hrci_logo.jpg" alt="image"/></a>
+						
 						
 					</div>
 				</div>
