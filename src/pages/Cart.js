@@ -1138,7 +1138,7 @@ sessionStorage.setItem("orderId", insertId);
                 <ul>
                     <li><strong>Live Session:</strong> Access details will be emailed 12 hours before the scheduled session.</li>
 
-                    <li><strong>On-Demand & Transcript:</strong> Access details will be provided 24 hours after the live session.</li>
+                    <li><strong>Recording, Transcript(PDF) and Digital Download:</strong> Access details will be provided 24 hours after the live session.</li>
 
                     <li><strong>Dashboard Access:</strong> You can log in to your dashboard anytime to view training materials.</li>
                 </ul>
