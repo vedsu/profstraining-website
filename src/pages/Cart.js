@@ -427,6 +427,7 @@ const insertId = response[0][0].message.id;
 console.log("Insert ID :", insertId);
 
 sessionStorage.setItem("orderId", insertId);
+sessionStorage.setItem("invoice_number", "PT" + insertId);
 
 
     // Go to Order Review

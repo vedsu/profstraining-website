@@ -66,6 +66,11 @@ try {
         billing.zipcode || ""
     );
 
+    formData.append(
+        "state",
+        billing.state || ""
+    );
+
     // Payment Details
     formData.append(
         "paymentstatus",
@@ -84,7 +89,7 @@ try {
 
     formData.append(
         "invoice_number",
-        "ORDER" + orderId
+        "PT" + orderId
     );
 
     // IMPORTANT
@@ -151,11 +156,12 @@ formData.append(
     customername: billing.name || "",
     country: billing.country || "",
     zipcode: billing.zipcode || "",
+    state: billing.state || "",
 
     paymentstatus: "purchased",
   orderamount: Number(grandTotal).toFixed(2),
     discount: Number(discount).toFixed(2),
-    invoice_number: "ORDER" + orderId,
+    invoice_number: "PT" + orderId,
     order_datetimezone: new Date().toUTCString(),
     Website: WEBSITE,
 
