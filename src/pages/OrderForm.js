@@ -482,7 +482,7 @@ function OrderForm() {
                 <strong>
                   For any queries call at
                   {" "}
-                  +1 844-445-3653
+                  +1 302 520 5300
                 </strong>
                 {" "}
                 or email at
