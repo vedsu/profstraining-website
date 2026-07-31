@@ -775,23 +775,30 @@ const month = months[parseInt(monthNo, 10) - 1];
                                     Recorded Webinar
                                 </span>
 
+
+										 <div className="webinar-infot">
+        <span className="webinar-metatop">
+            <i className="fa fa-clock-o"></i>
+            {new Date(`2000-01-01 ${item.time}`).toLocaleTimeString("en-US", {
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: true,
+            })} ET
+        </span>
+
+        <span className="webinar-metatop">
+            <i className="fa fa-hourglass-half"></i>
+            {item.duration} mins
+        </span>
+    </div>
+
                                  <h3>{item.topic}</h3>
 
                                 <div className="webinar-meta">
 
-                                   <span>
-  <i className="fa fa-calendar"></i>
-  {`${month} ${day}, ${year}`}
-</span>
+                                  
 									
-									<span>
-									  <i className="fa fa-clock-o"></i>
-									  {new Date(`2000-01-01 ${item.time}`).toLocaleTimeString("en-US", {
-										hour: "2-digit",
-										minute: "2-digit",
-										hour12: true,
-									  })} ET
-									</span>
+									
 									
 									<span>
 								  <i className="fa fa-building"></i>
@@ -800,10 +807,12 @@ const month = months[parseInt(monthNo, 10) - 1];
 								
 								 <span><i class="fa fa-user"></i>{item.speaker}</span>
 
-                                      <span>
-										  <i className="fa fa-hourglass-half"></i>
-										  {item.duration} mins
-										</span>
+                                     	  
+									{item.certificate && item.creditScore && (
+										  <span className="certificate-badge ms-3">
+											{item.certificate.replace(/HRCI.*/i, "HRCI")} Approved
+										  </span>
+										)}
 
                                 </div>
 
