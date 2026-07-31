@@ -827,7 +827,7 @@ const onDemandWebinars = webinars.filter(
 .certificate-badge {
     display: inline-block;
     padding: 5px;
-    border: 1.5px solid #525FE1;
+    border: 2.5px solid #525FE1;
     border-radius: 6px;
     color: #143D8D !important;
     background-color: #F2F4FF;
