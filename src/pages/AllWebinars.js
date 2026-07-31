@@ -438,6 +438,57 @@ function AllWebinars() {
         margin-top: 5px;
     }
 }
+
+.webinar-metatop{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #333;
+    font-size: 15px;
+}
+
+.webinar-infot{
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    margin-left: 15px;
+    flex-wrap: wrap;
+}
+
+.webinar-metatop{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 16px;
+    color: #333;
+}
+
+.webinar-metatop i{
+    color: #f26b65;
+}
+.webinar-top{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+
+
+.certificate-badge {
+    display: inline-block;
+    padding: 5px;
+    border: 1.5px solid #525FE1;
+    border-radius: 6px;
+    color: #143D8D !important;
+    background-color: #F2F4FF;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+
 `}</style>
 
 <section className="home_course section-padding py-5">
@@ -599,24 +650,26 @@ function AllWebinars() {
                                     <i className="fa fa-video-camera"></i> Live Webinar
                                 </span>
 
+							  <div className="webinar-infot">
+        <span className="webinar-metatop">
+            <i className="fa fa-clock-o"></i>
+            {new Date(`2000-01-01 ${item.time}`).toLocaleTimeString("en-US", {
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: true,
+            })} ET
+        </span>
+
+        <span className="webinar-metatop">
+            <i className="fa fa-hourglass-half"></i>
+            {item.duration} mins
+        </span>
+    </div>
+
                                   <h3>{item.topic}</h3>
 
                                  <div className="webinar-meta">
-
-									
-									<span>
-  <i className="fa fa-calendar"></i>
-  {`${month} ${day}, ${year}`}
-</span>
-
-									<span>
-									  <i className="fa fa-clock-o"></i>
-									  {new Date(`2000-01-01 ${item.time}`).toLocaleTimeString("en-US", {
-										hour: "2-digit",
-										minute: "2-digit",
-										hour12: true,
-									  })} ET
-									</span>
+							
 									
 									<span>
 								  <i className="fa fa-building"></i>
@@ -630,7 +683,12 @@ function AllWebinars() {
 									</span>
 									
 									
-
+										{item.certificate && item.creditScore && (
+										  <span className="certificate-badge ms-3">
+											{item.certificate.replace(/HRCI.*/i, "HRCI")} Approved
+										  </span>
+										)}
+													
 								</div>
 
                             </div>
