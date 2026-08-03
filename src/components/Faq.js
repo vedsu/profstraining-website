@@ -98,20 +98,7 @@ function Faq() {
 							</div>
 						</div>
 						
-
-
-						<div className="accordion-item">
-							<h2 className="accordion-header" id="headingSeven">
-							  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-								 What is a Transcript?
-							  </button>
-							</h2>
-							<div id="collapseSeven" className="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
-							  <div className="accordion-body">
-								The transcript is a written record of the spoken words in a webinar. It includes the presenter’s words and any questions and comments from participants. Read at any time within 30 days of access.
-							  </div>
-							</div>
-						</div>	
+						
 						
 						<div className="accordion-item">
 							<h2 className="accordion-header" id="headingEight">
