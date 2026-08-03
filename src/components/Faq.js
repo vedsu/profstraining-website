@@ -235,7 +235,12 @@ function Faq() {
 							<div id="collapseFifty" className="accordion-collapse collapse" aria-labelledby="headingFifty" data-bs-parent="#accordionExample">
 							  <div className="accordion-body">
 								You can access the podcast through the link below:<br/>
-		  						<a href="https://www.youtube.com/@BrianEdmonds-profs" style="color:#23282c;">https://www.youtube.com/@BrianEdmonds-profs</a>
+		  						<a
+        href="https://www.youtube.com/@BrianEdmonds-profs"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ color: "#23282c" }}
+      >https://www.youtube.com/@BrianEdmonds-profs</a>
 							  </div>
 							</div>
 						</div>	
