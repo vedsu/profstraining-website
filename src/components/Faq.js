@@ -38,24 +38,24 @@ function Faq() {
 						  <div className="accordion-item">
 							<h2 className="accordion-header" id="headingOne">
 							  <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-								What is a live session?
+								What is a webinar?
 							  </button>
 							</h2>
 							<div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
 							  <div className="accordion-body">
-								 Live webinar training is a virtual event that takes place in real time, where a speaker presents information, and participants can interact with them through a web conferencing platform.
+								A webinar is a live online session that combines audio, presentation slides, polls, and Q&A. You can join from anywhere using an internet-connected device.
 							  </div>
 							</div>
 						  </div>
 						  <div className="accordion-item">
 							<h2 className="accordion-header" id="headingTwo">
 							  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-								How to join the live session?
+								How do I join a live session?
 							  </button>
 							</h2>
 							<div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
 							  <div className="accordion-body">
-								Login to your dashboard and get your Live Instruction. Also, you will get a notification via email. We will drop you live instructions via email 12 hours before the live webinar.
+								Your live webinar instructions will be available on your dashboard and also sent to your registered email 12 hours before the session. Join 10–15 minutes early to test your internet, browser, and audio.
 							  </div>
 							</div>
 						  </div>
