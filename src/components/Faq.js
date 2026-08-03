@@ -246,6 +246,47 @@ function Faq() {
 						</div>	
 
 
+								   <div className="accordion-item">
+							<h2 className="accordion-header" id="headingSixty">
+							  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSixty" aria-expanded="false" aria-controls="collapseSixty">
+								When will I receive my Certificate of Completion?
+							  </button>
+							</h2>
+							<div id="collapseSixty" className="accordion-collapse collapse" aria-labelledby="headingSixty" data-bs-parent="#accordionExample">
+							  <div className="accordion-body">
+								Certificates are issued after verifying attendance and participation requirements. We will email and make it available within 24 hours with the Activity ID.
+							  </div>
+							</div>
+						</div>	
+
+		     <div className="accordion-item">
+							<h2 className="accordion-header" id="headingSeventy">
+							  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeventy" aria-expanded="false" aria-controls="collapseSeventy">
+								How do I add HRCI or SHRM credits to my account?
+							  </button>
+							</h2>
+							<div id="collapseSeventy" className="accordion-collapse collapse" aria-labelledby="headingSeventy" data-bs-parent="#accordionExample">
+							  <div className="accordion-body">
+								Sign in to your HRCI or SHRM account and report the activity using your certificate details. Keep the certificate and program information for your records.
+							  </div>
+							</div>
+						</div>	
+
+
+		   <div className="accordion-item">
+							<h2 className="accordion-header" id="headingEightty">
+							  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEightty" aria-expanded="false" aria-controls="collapseEightty">
+								Will I receive CPE credits for a recording?
+							  </button>
+							</h2>
+							<div id="collapseEightty" className="accordion-collapse collapse" aria-labelledby="headingEightty" data-bs-parent="#accordionExample">
+							  <div className="accordion-body">
+								Yes, you will receive CPE credits for a recording only if the session displays the green approval tick.
+							  </div>
+							</div>
+						</div>	
+
+
 						  
 						</div>						
 					</div>
