@@ -62,12 +62,12 @@ function Faq() {
 						  <div className="accordion-item">
 							<h2 className="accordion-header" id="headingThree">
 							  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-								When will the recording be available after the live session?
+								Do you offer free webinars?
 							  </button>
 							</h2>
 							<div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
 							  <div className="accordion-body">
-								Recording and Transcript will be available 24 hours after the live date.
+								Profs Training does not offer free webinars. All sessions require paid registration
 							  </div>
 							</div>
 						  </div>
@@ -86,12 +86,12 @@ function Faq() {
 						  <div className="accordion-item">
 							<h2 className="accordion-header" id="headingFive">
 							  <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
-								 What is Digital Download?
+								How do I access the course material during a live event?
 							  </button>
 							</h2>
 							<div id="collapseFive" className="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
 							  <div className="accordion-body">
-								A Digital download is a digital file that can be downloaded at your end and used without any further processing. This could include a webinar, video, audio file, or other digital content. Please save it in your local storage so that you will be able to have lifetime access. The digital download link is valid for 30 Days. The information in this email is unique to you and valid only for you. Please do not share the information with others.
+								Course materials will be shared via email, or you can download them from our GoTo Meeting webinar platform. Availability depends on the webinar and registration package.
 							  </div>
 							</div>
 						  </div>
@@ -99,12 +99,12 @@ function Faq() {
 						<div className="accordion-item">
 							<h2 className="accordion-header" id="headingSix">
 							  <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
-								  How to get Digital Download?
+								 What happens if I miss the live webinar?
 							  </button>
 							</h2>
 							<div id="collapseSix" className="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
 							  <div className="accordion-body">
-								Login to your dashboard and click on Digital Download to get lifetime access. Also, we will drop you download instructions via email for the same.
+								If you miss the live session, you are eligible to switch to the recording package at no additional cost upon requesting assistance from our support team.
 							  </div>
 							</div>
 						</div>
@@ -127,12 +127,12 @@ function Faq() {
 						<div className="accordion-item">
 							<h2 className="accordion-header" id="headingEight">
 							  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-								 How to get a transcript(pdf)?
+								What is the difference between registration packages?
 							  </button>
 							</h2>
 							<div id="collapseEight" className="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
 							  <div className="accordion-body">
-								Login to your dashboard and download the transcript(pdf). Also, we will drop you download instructions via email for the same. The Transcript pdf file will be available in your dashboard for the duration of 30 days of access.
+								Live access lets you attend in real time, while a recording allows later viewing. Transcripts provide written content, and digital downloads allow permitted lifetime access.
 							  </div>
 							</div>
 						</div>	
@@ -140,12 +140,12 @@ function Faq() {
 						<div className="accordion-item">
 							<h2 className="accordion-header" id="headingNine">
 							  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
-								 What is an on-demand(recording) session?
+								How do I update my registration?
 							  </button>
 							</h2>
 							<div id="collapseNine" className="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
 							  <div className="accordion-body">
-								A recorded webinar is an online event that has been pre-recorded and can be watched at any time with 30 days’ access.
+								Sign in to your account or contact Customer Support to update attendee or billing details. Submit all changes as early as possible before the webinar.
 							  </div>
 							</div>
 						</div>
@@ -155,12 +155,12 @@ function Faq() {
 						<div className="accordion-item">
 							<h2 className="accordion-header" id="headingTen">
 							  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
-								 How to watch an on-demand(recording) session?
+								Where can I find my live webinar link?
 							  </button>
 							</h2>
 							<div id="collapseTen" className="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
 							  <div className="accordion-body">
-								Login to your dashboard and watch the recording. Also, we will drop you download instructions via email for the same. The recording access will be available in your dashboard for the duration of 30 days with unlimited watch access.
+								The joining link will be sent to your registered email address before the session. Check your inbox, spam, promotions folder, and Profs Training account.
 							  </div>
 							</div>
 						</div>	
@@ -169,12 +169,12 @@ function Faq() {
 						<div className="accordion-item">
 							<h2 className="accordion-header" id="headingEleven">
 							  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
-								 How to get an invoice?
+								 How do I receive the recording, transcript, or digital download?
 							  </button>
 							</h2>
 							<div id="collapseEleven" className="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#accordionExample">
 							  <div className="accordion-body">
-								Login to your dashboard and download the Invoice(pdf). Also, we will drop Thank You email once the order is confirmed.
+								Your purchased product will be delivered by email within 48 hours of the post-live session, or it will be available in your Profs Training account.
 							  </div>
 							</div>
 						</div>	
@@ -182,12 +182,12 @@ function Faq() {
 						<div className="accordion-item">
 							<h2 className="accordion-header" id="headingTwl">
 							  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwl" aria-expanded="false" aria-controls="collapseTwl">
-								 Is there any other option for registration?
+								How do I get an invoice or receipt?
 							  </button>
 							</h2>
 							<div id="collapseTwl" className="accordion-collapse collapse" aria-labelledby="headingTwl" data-bs-parent="#accordionExample">
 							  <div className="accordion-body">
-								You can download the registration form or request a call.
+								Your invoice can be downloaded as a PDF from your dashboard. You will also receive an order confirmation email after successful payment.
 							  </div>
 							</div>
 						</div>	
@@ -196,12 +196,46 @@ function Faq() {
 						<div className="accordion-item">
 							<h2 className="accordion-header" id="headingThrd">
 							  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThrd" aria-expanded="false" aria-controls="collapseThrd">
-								  How can I change my password?
+								  Is there a provision for a refund?
 							  </button>
 							</h2>
 							<div id="collapseThrd" className="accordion-collapse collapse" aria-labelledby="headingThrd" data-bs-parent="#accordionExample">
 							  <div className="accordion-body">
-								Login to your dashboard and go to my profile and change the password.
+								Review the conditions before proceeding:
+		  						<ul>
+									<li>Cancel at least 72 hours before the webinar; approved refunds include a $30 processing fee.</li>
+			  						<li>Registrations may also be transferred to another attendee or future webinar with prior notice.</li>
+			  						<li>Refunds are not available for missed sessions, participant-side access issues, on-demand webinars, or delivered digital products.</li>
+			  						<li>A full refund will be issued if Profs Training cancels the event due to technical issues.</li>
+									</ul>
+							  </div>
+							</div>
+						</div>	
+
+			 			 <div className="accordion-item">
+							<h2 className="accordion-header" id="headingTwl">
+							  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwl" aria-expanded="false" aria-controls="collapseTwl">
+								Do you offer discounts for non-profit organizations?
+							  </button>
+							</h2>
+							<div id="collapseTwl" className="accordion-collapse collapse" aria-labelledby="headingTwl" data-bs-parent="#accordionExample">
+							  <div className="accordion-body">
+								Contact us by email, and our team will confirm any available offers or discount options.
+							  </div>
+							</div>
+						</div>	
+
+
+			   <div className="accordion-item">
+							<h2 className="accordion-header" id="headingTwl">
+							  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwl" aria-expanded="false" aria-controls="collapseTwl">
+								How do I access the podcast?
+							  </button>
+							</h2>
+							<div id="collapseTwl" className="accordion-collapse collapse" aria-labelledby="headingTwl" data-bs-parent="#accordionExample">
+							  <div className="accordion-body">
+								You can access the podcast through the link below:
+		  						<a href="https://www.youtube.com/@BrianEdmonds-profs">	https://www.youtube.com/@BrianEdmonds-profs</a>
 							  </div>
 							</div>
 						</div>	
