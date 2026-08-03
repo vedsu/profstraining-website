@@ -213,12 +213,12 @@ function Faq() {
 						</div>	
 
 			 			 <div className="accordion-item">
-							<h2 className="accordion-header" id="headingTwl">
-							  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwl" aria-expanded="false" aria-controls="collapseTwl">
+							<h2 className="accordion-header" id="headingFouty">
+							  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFouty" aria-expanded="false" aria-controls="collapseFouty">
 								Do you offer discounts for non-profit organizations?
 							  </button>
 							</h2>
-							<div id="collapseTwl" className="accordion-collapse collapse" aria-labelledby="headingTwl" data-bs-parent="#accordionExample">
+							<div id="collapseFouty" className="accordion-collapse collapse" aria-labelledby="headingFouty" data-bs-parent="#accordionExample">
 							  <div className="accordion-body">
 								Contact us by email, and our team will confirm any available offers or discount options.
 							  </div>
@@ -227,15 +227,15 @@ function Faq() {
 
 
 			   <div className="accordion-item">
-							<h2 className="accordion-header" id="headingTwl">
-							  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwl" aria-expanded="false" aria-controls="collapseTwl">
+							<h2 className="accordion-header" id="headingFifty">
+							  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFifty" aria-expanded="false" aria-controls="collapseFifty">
 								How do I access the podcast?
 							  </button>
 							</h2>
-							<div id="collapseTwl" className="accordion-collapse collapse" aria-labelledby="headingTwl" data-bs-parent="#accordionExample">
+							<div id="collapseFifty" className="accordion-collapse collapse" aria-labelledby="headingFifty" data-bs-parent="#accordionExample">
 							  <div className="accordion-body">
-								You can access the podcast through the link below:
-		  						<a href="https://www.youtube.com/@BrianEdmonds-profs">	https://www.youtube.com/@BrianEdmonds-profs</a>
+								You can access the podcast through the link below:<br/>
+		  						<a href="https://www.youtube.com/@BrianEdmonds-profs">https://www.youtube.com/@BrianEdmonds-profs</a>
 							  </div>
 							</div>
 						</div>	
