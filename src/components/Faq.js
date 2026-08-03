@@ -71,18 +71,7 @@ function Faq() {
 							  </div>
 							</div>
 						  </div>
-						  <div className="accordion-item">
-							<h2 className="accordion-header" id="headingFour">
-							  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-								How to get a handout/presentation(pdf)?
-							  </button>
-							</h2>
-							<div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-							  <div className="accordion-body">
-								Login to your dashboard and download the presentation(pdf).
-							  </div>
-							</div>
-						  </div>	
+						 
 						  <div className="accordion-item">
 							<h2 className="accordion-header" id="headingFive">
 							  <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
