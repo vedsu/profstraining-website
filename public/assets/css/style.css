@@ -2772,6 +2772,7 @@ font-weight: 700;
 	color: #0b104a !important;
 	font-weight: 700;
 	font-size:20px;
+	    padding: 3px 3px 3px 8px;
 }
 .accordion-button:not(.collapsed) {
 	color:#0b104a!important;
