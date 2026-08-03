@@ -33,7 +33,7 @@ function Faq() {
 		<section className="faq_area section-padding">
 			<div className="container">															
 				<div className="row justify-content-center">		
-					<div className="col-lg-7 col-sm-12 col-xs-12">
+					<div className="col-lg-8 col-sm-12 col-xs-12">
 						<div className="accordion" id="accordionExample">
 						  <div className="accordion-item">
 							<h2 className="accordion-header" id="headingOne">
@@ -290,7 +290,7 @@ function Faq() {
 						  
 						</div>						
 					</div>
-					<div className="col-lg-5 col-sm-12 col-xs-12">
+					<div className="col-lg-4 col-sm-12 col-xs-12">
 						<div className="faq_img">
 							<img src="/assets/img/faq.jpg" alt="faq image" />
 						</div>
