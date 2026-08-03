@@ -202,7 +202,7 @@ function Faq() {
 							<div id="collapseThrd" className="accordion-collapse collapse" aria-labelledby="headingThrd" data-bs-parent="#accordionExample">
 							  <div className="accordion-body">
 								Review the conditions before proceeding:
-		  						<ul style={{ listStylePosition: "inside" }}>
+		  						<ul style={{ listStyle: "inside" }}>
 									<li>Cancel at least 72 hours before the webinar; approved refunds include a $30 processing fee.</li>
 			  						<li>Registrations may also be transferred to another attendee or future webinar with prior notice.</li>
 			  						<li>Refunds are not available for missed sessions, participant-side access issues, on-demand webinars, or delivered digital products.</li>
