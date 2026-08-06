@@ -1021,7 +1021,7 @@ button.btn_one.webinar-details {
 
         <div className="col-lg-10 col-md-9 col-sm-9 col-12">
           <p className="mb-0">
-          This program is valid for 1.5 PDCs for the SHRM-CP® or SHRM-SCP®.
+          <strong>This program is valid for 1.5 PDCs for the SHRM-CP® or SHRM-SCP®.</strong>
           </p>
         </div>
 
