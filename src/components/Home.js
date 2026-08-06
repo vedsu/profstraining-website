@@ -1162,7 +1162,7 @@ const month = months[parseInt(monthNo, 10) - 1];
 			<div className="row part_bg">
 				<div className="col-lg-8 col-sm-8 col-xs-12">
 					<div className="partner_title">
-						<h3>Profs Training is an <span>HRCI</span> ® Approved Recertification Provider. Eligible HR programs may be approved for HRCI recertification credit toward aPHR®, PHR®, PHRca®, SPHR®, GPHR®, PHRi™ and SPHRi™ recertification. </h3>
+						<h3>Profs Training is an <span>HRCI</span>® Approved Recertification Provider. Eligible HR programs may be approved for HRCI recertification credit toward aPHR®, PHR®, PHRca®, SPHR®, GPHR®, PHRi™ and SPHRi™ recertification. </h3>
 					</div>
 				</div>
 				<div className="col-lg-4 col-sm-4 col-xs-12 text-center">
