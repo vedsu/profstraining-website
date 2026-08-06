@@ -118,6 +118,11 @@ const handleModalRegister = async (e) => {
   }
 };
 
+
+	const showSHRM =
+  slug ===
+  "managing-remote--multistate-employees-payroll-tax--compliance-essentials-for-hr";
+
   useEffect(() => {
 
     axios
@@ -1001,7 +1006,29 @@ button.btn_one.webinar-details {
   </div>
 )}
 
-			
+{showSHRM && (
+  <div className="card shadow-sm border-0 mt-3 certificate-card mb-4">
+    <div className="card-body">
+      <div className="row align-items-center">
+
+        <div className="col-lg-2 col-md-3 col-sm-3 col-12 text-center mb-3 mb-md-0">
+          <img
+            src="/assets/img/shrm-recertification-provider.png"
+            alt="SHRM"
+            className="img-fluid certificate-logo"
+          />
+        </div>
+
+        <div className="col-lg-10 col-md-9 col-sm-9 col-12">
+          <p className="mb-0">
+          This program is valid for 1.5 PDCs for the SHRM-CP® or SHRM-SCP®.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+)}			
 
 <div
   className="webinar-description"
