@@ -685,7 +685,7 @@ function AllWebinars() {
 									
 										{item.certificate && item.creditScore && (
 										  <span className="certificate-badge ms-3">
-											{item.certificate.replace(/HRCI.*/i, "HRCI")} & SHRM Approved
+											{item.certificate.replace(/HRCI.*/i, "HRCI")} Approved
 										  </span>
 										)}
 													
@@ -810,7 +810,7 @@ const month = months[parseInt(monthNo, 10) - 1];
                                      	  
 									{item.certificate && item.creditScore && (
 										  <span className="certificate-badge ms-3">
-											{item.certificate.replace(/HRCI.*/i, "HRCI")} & SHRM Approved
+											{item.certificate.replace(/HRCI.*/i, "HRCI")} Approved
 										  </span>
 										)}
 
