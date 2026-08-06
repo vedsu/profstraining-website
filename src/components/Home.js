@@ -1178,6 +1178,22 @@ const month = months[parseInt(monthNo, 10) - 1];
 					</div>
 				</div>
 			</div>
+
+
+			<div className="row part_bg mt-3">
+				<div className="col-lg-8 col-sm-8 col-xs-12">
+					<div className="partner_title">
+						<h3>Profs Training is recognized by <span>SHRM </span> to offer Professional Development Credits (PDCs) for SHRM-CP® or SHRM-SCP® recertification activities. </h3>
+					</div>
+				</div>
+				<div className="col-lg-4 col-sm-4 col-xs-12 text-center">
+					<div className="partner">
+						<img src="/assets/img/shrm-recertification-provider.png" alt="image" />
+							
+						
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	
