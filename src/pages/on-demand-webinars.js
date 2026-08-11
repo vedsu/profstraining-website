@@ -341,11 +341,41 @@ const month = months[parseInt(monthNo, 10) - 1];
 				
 				 <span><i class="fa fa-user"></i>{item.speaker}</span>
   
-									{item.certificate && item.creditScore && (
-										  <span className="certificate-badge ms-3">
-											{item.certificate.replace(/HRCI.*/i, "HRCI")} Approved
-										  </span>
-										)}
+									
+									{Array.isArray(item.certificate) &&
+  item.certificate.length > 0 &&
+  item.creditScore !== null &&
+  item.creditScore !== undefined &&
+  item.creditScore !== "" &&
+  item.creditScore !== "None" &&
+  item.creditScore !== "none" && (
+    <span className="certificate-badge ms-3">
+      {[
+        ...new Set(
+          item.certificate
+            .filter(
+              (cert) =>
+                cert &&
+                cert.toLowerCase() !== "none"
+            )
+            .map((cert) => {
+              const value = cert.toLowerCase();
+
+              if (value.includes("hrci")) {
+                return "HRCI";
+              }
+
+              if (value.includes("shrm")) {
+                return "SHRM";
+              }
+
+              return cert;
+            })
+        ),
+      ].join(", ")}{" "}
+      Approved
+    </span>
+)}
                 
               </div>
 
