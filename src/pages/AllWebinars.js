@@ -801,8 +801,7 @@ const month = months[parseInt(monthNo, 10) - 1];
                             <div className="webinar-content">
 
                                 <span className="webinar-badge">
-                                    <i className="fa fa-play-circle"></i>
-                                    Recorded Webinar
+                                    <i className="fa fa-play-circle"></i>  Recorded Webinar
                                 </span>
 
 
