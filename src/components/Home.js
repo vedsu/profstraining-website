@@ -258,6 +258,7 @@ const onDemandWebinars = webinars.filter(
         display:grid;
         grid-template-columns:repeat(3,1fr);
         gap:18px;
+		right: 0px;
     }
 
     .hero-card{
