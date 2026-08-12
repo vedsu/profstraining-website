@@ -194,7 +194,7 @@ const onDemandWebinars = webinars.filter(
 
   <>
   
-  <style>{`
+ <style>{`
   /* iPad Pro */
 /* ===========================
    iPad Pro (768px - 1194px)
@@ -406,19 +406,36 @@ const onDemandWebinars = webinars.filter(
 .hero-boxes{
     position: relative;
 }
-
+/*
 .card-three{
-    width: calc(100% - 180px);   /* logo ke liye right side space */
+    width: calc(100% - 180px);    logo ke liye right side space 
 }
-
+*/
 .hero-hrci{
-    position: absolute;
-    right: 0;
-    top: 210px;      /* apne layout ke hisab se adjust kar lena */
-    width: 160px;
+       position: absolute;
+    right: -148px;
+    top: 211px;
+    width: 134px;
 }
 
 .hero-hrci img{
+    width: 100%;
+    background: #fff;
+    border-radius: 8px;
+    padding: 4px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.15);
+}
+
+
+
+.hero-shrm{
+       position: absolute;
+    right: -148px;
+    top: 52px;
+    width: 134px;
+}
+
+.hero-shrm img{
     width: 100%;
     background: #fff;
     border-radius: 8px;
@@ -439,21 +456,25 @@ const onDemandWebinars = webinars.filter(
 
 /* Nest Hub / Small Desktop */
 @media (min-width:1200px) and (max-width:1366px){
-
+/*
     .card-three{
         width: calc(100% - 150px);
-    }
+    }*/
 
-    .hero-hrci{
-        width: 145px;
-        right: 0;
-        top: 229px;
-    }
+    hero-hrci {
+        width: 131px;
+        right: -148px;
+        top: 219px;
+	}
 
     .hero-card p{
         font-size:14px;
         line-height:1.5;
     }
+	
+	.hero-boxes {
+    position: relative;
+    right: 99px;
 }
 
   `}</style>
@@ -544,6 +565,15 @@ const onDemandWebinars = webinars.filter(
 				        />
 				    </a>
 				</div>
+
+				<div className="hero-shrm desktop-only">
+				  
+				        <img
+				            src="https://webinarprof.s3.us-east-1.amazonaws.com/shrm-recertification-provider.png"
+				            alt="HRCI"
+				        />
+				    
+				</div>
 			</div>
 
         </div>
@@ -561,6 +591,13 @@ const onDemandWebinars = webinars.filter(
 					alt="HRCI"
 				/>
 						</a>
+			</div>
+
+			<div className="tablet-hrci">
+				<img
+					src="https://webinarprof.s3.us-east-1.amazonaws.com/shrm-recertification-provider.png"
+					alt="SHRM"
+				/>
 			</div>
 
         <div className="home_sb2 mt-4">
