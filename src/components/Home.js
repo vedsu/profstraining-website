@@ -477,7 +477,7 @@ const onDemandWebinars = webinars.filter(
     right: 99px;
 }
 }
-@media (min-width:850px) and (max-width:1521px){
+@media (min-width:1520px) and (max-width:1521px){
 .hero-boxes {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
