@@ -305,6 +305,7 @@ const daysLeft = Math.max(
             <div className="webinar-date">
               <span className="month">{month}</span>
               <h3>{day}</h3>
+		  <strong>{year}</strong>
             </div>
 
             <div className="webinar-content">
