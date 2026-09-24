@@ -642,6 +642,7 @@ function AllWebinars() {
                             <div className="webinar-date">
 							  <span className="month">{month}</span>
 							  <h3>{day}</h3>
+							  <strong>{year}</strong>
 							</div>
 
                             <div className="webinar-content">
@@ -796,6 +797,7 @@ const month = months[parseInt(monthNo, 10) - 1];
                             <div className="webinar-date">
 							  <span className="month">{month}</span>
 							  <h3>{day}</h3>
+						  <strong>{year}</strong>
 							</div>
 
                             <div className="webinar-content">
